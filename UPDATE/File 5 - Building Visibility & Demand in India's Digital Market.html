@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>India Digital Growth — Building Visibility & Demand in India's Market | JB NewGen</title>
+<meta name="description" content="JB NewGen builds and manages India digital growth for global startups — India SEO, YouTube marketing, WhatsApp campaigns, Google Ads, and performance marketing built for Indian buyers." />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0B1B38; --navy-mid: #162B52; --orange: #E8540A; --orange-light: #FF6B1A;
+    --cream: #F9F6F0; --cream-dark: #EDE8DF; --text-body: #2C2C2A;
+    --text-muted: #5F5E5A; --text-light: #888780; --white: #FFFFFF;
+    --border: rgba(11,27,56,0.12);
+  }
+  body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.7; color: var(--text-body); background: var(--white); }
+  h1, h2, h3, h4 { font-family: 'Sora', sans-serif; font-weight: 700; line-height: 1.2; color: var(--navy); }
+
+  /* HERO */
+  .hero { background: var(--navy); padding: 100px 48px 80px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -120px; right: -120px; width: 480px; height: 480px; border-radius: 50%; background: var(--orange); opacity: 0.08; }
+  .hero::after { content: ''; position: absolute; bottom: -80px; left: 30%; width: 300px; height: 300px; border-radius: 50%; background: var(--orange); opacity: 0.05; }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge { display: inline-block; background: rgba(232,84,10,0.15); color: #FF8C4A; font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; border: 1px solid rgba(232,84,10,0.3); margin-bottom: 28px; }
+  .hero h1 { color: var(--white); font-size: clamp(32px, 5vw, 52px); margin-bottom: 20px; max-width: 720px; }
+  .hero h1 span { color: var(--orange-light); }
+  .hero p { color: rgba(255,255,255,0.72); font-size: 18px; font-weight: 300; max-width: 620px; line-height: 1.75; margin-bottom: 40px; }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary { background: var(--orange); color: var(--white); font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; padding: 14px 28px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
+  .btn-primary:hover { background: var(--orange-light); }
+  .btn-secondary { background: transparent; color: rgba(255,255,255,0.8); font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 500; padding: 14px 28px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.25); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+
+  .section-label { font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; }
+  .section { padding: 88px 48px; }
+  .section-inner { max-width: 1000px; margin: 0 auto; }
+  .bg-cream { background: var(--cream); }
+  .bg-navy { background: var(--navy); }
+  .bg-white { background: var(--white); }
+
+  /* INSIGHT CARDS */
+  .insight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 40px; }
+  .insight-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; }
+  .insight-stat { font-family: 'Sora', sans-serif; font-size: 28px; font-weight: 700; color: var(--orange); margin-bottom: 8px; }
+  .insight-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 8px; color: var(--navy); }
+  .insight-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+  /* SERVICES */
+  .section-header { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 64px; align-items: end; }
+  .section-header h2 { font-size: clamp(26px, 3.5vw, 38px); }
+  .section-header p { color: var(--text-muted); font-size: 16px; line-height: 1.75; }
+  .services { display: flex; flex-direction: column; gap: 0; }
+  .service-item { display: grid; grid-template-columns: 56px 1fr; gap: 0 28px; padding: 36px 0; border-top: 1px solid var(--border); }
+  .service-item:last-child { border-bottom: 1px solid var(--border); }
+  .service-num { font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; color: var(--orange); padding-top: 4px; }
+  .service-body h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; color: var(--navy); }
+  .service-body p { font-size: 15px; color: var(--text-muted); line-height: 1.75; max-width: 680px; margin-bottom: 16px; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-size: 12px; font-weight: 500; color: var(--navy-mid); background: var(--cream); border: 1px solid var(--border); padding: 4px 12px; border-radius: 100px; }
+
+  /* WHY */
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .why-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 28px 24px; }
+  .why-card h4 { color: var(--white); font-size: 16px; margin-bottom: 10px; }
+  .why-card p { color: rgba(255,255,255,0.58); font-size: 14px; line-height: 1.7; }
+  .why-check { width: 28px; height: 28px; border-radius: 50%; background: rgba(232,84,10,0.2); border: 1px solid rgba(232,84,10,0.4); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 12px; color: #FF8C4A; }
+  .why h2 { color: var(--white); font-size: clamp(26px, 3.5vw, 38px); margin-bottom: 16px; }
+  .why > .section-inner > p { color: rgba(255,255,255,0.65); font-size: 17px; margin-bottom: 56px; max-width: 600px; }
+  .why .section-label { color: #FF8C4A; }
+
+  /* CTA */
+  .cta-section { background: var(--cream); padding: 88px 48px; text-align: center; }
+  .cta-inner { max-width: 640px; margin: 0 auto; }
+  .cta-section h2 { font-size: clamp(26px, 3.5vw, 38px); margin-bottom: 16px; }
+  .cta-section p { color: var(--text-muted); font-size: 17px; margin-bottom: 40px; }
+  .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-dark { background: var(--navy); color: var(--white); font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; padding: 16px 32px; border-radius: 8px; text-decoration: none; }
+  .btn-outline { background: transparent; color: var(--navy); font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 500; padding: 16px 32px; border-radius: 8px; border: 1.5px solid var(--navy); text-decoration: none; }
+
+  /* SEO */
+  .seo-block { padding: 72px 48px; background: var(--white); border-top: 1px solid var(--border); }
+  .seo-inner { max-width: 780px; margin: 0 auto; }
+  .seo-inner h2 { font-size: 24px; margin-bottom: 16px; }
+  .seo-inner p { color: var(--text-muted); font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
+  .seo-inner ul { padding-left: 20px; color: var(--text-muted); font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
+
+  @media (max-width: 700px) {
+    .hero, .section, .cta-section, .seo-block { padding-left: 24px; padding-right: 24px; }
+    .section-header { grid-template-columns: 1fr; gap: 24px; }
+    .insight-grid, .why-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">India Digital Growth — Service 03</div>
+    <h1>Building visibility & demand in <span>India's digital market</span></h1>
+    <p>India's digital audience is 900 million strong — and they don't behave like your existing customers. They discover brands on YouTube before Google. They transact on WhatsApp before your website. They trust regional-language content more than English. Getting India digital marketing right means understanding these differences and building campaigns that work with them, not against them.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Book a Free India Digital Strategy Call →</a>
+      <a href="#services" class="btn-secondary">See What We Do</a>
+    </div>
+  </div>
+</section>
+
+<!-- INDIA DIGITAL INSIGHTS -->
+<section class="section bg-cream">
+  <div class="section-inner">
+    <div class="section-label">Why India's Digital Landscape Is Different</div>
+    <h2 style="font-size:clamp(24px,3.5vw,36px);margin-bottom:12px;max-width:680px;">What every global startup gets wrong about digital marketing in India</h2>
+    <p style="color:var(--text-muted);font-size:17px;max-width:640px;">Your existing digital marketing playbook is almost certainly optimised for Western audiences. Running the same campaigns in India will deliver a fraction of the results — not because the channels don't work, but because the behaviour is fundamentally different.</p>
+    <div class="insight-grid">
+      <div class="insight-card">
+        <div class="insight-stat">900M+</div>
+        <h3>India's digital audience</h3>
+        <p>India's internet user base is the world's second largest — and growing faster than any other major market. The opportunity is enormous if you build for it correctly.</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-stat">YouTube first</div>
+        <h3>Discovery happens on video</h3>
+        <p>For high-consideration B2B and B2C decisions in India, YouTube is the primary research channel. Indian buyers watch product videos and comparisons before they visit a website.</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-stat">500M+</div>
+        <h3>WhatsApp is a marketing channel</h3>
+        <p>Brands that communicate through WhatsApp — with updates, offers, and content — consistently outperform those that rely on email alone in the Indian market.</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-stat">70%</div>
+        <h3>Regional language preference</h3>
+        <p>70% of India's internet users are more comfortable in a regional language than English. Regional content significantly outperforms English-only campaigns in Tier 2 and 3 cities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section bg-white" id="services">
+  <div class="section-inner">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Our Services</div>
+        <h2>Six India digital growth services — built for how India behaves online</h2>
+      </div>
+      <p>Every service below is designed with India's specific platform dynamics, language landscape, and buyer behaviour in mind. We don't adapt Western campaigns. We build for India from the start.</p>
+    </div>
+    <div class="services">
+
+      <div class="service-item">
+        <div class="service-num">01</div>
+        <div class="service-body">
+          <h3>India SEO & Search Presence</h3>
+          <p>Your global website is unlikely to rank for the Indian searches that matter to your buyers — and the keyword landscape is genuinely different from US or UK markets. Indian buyers search more conversationally, use Hindi-English code-switching, and strongly prefer local and city-specific results. We build India-specific SEO from the ground up: keyword research calibrated to Indian search behaviour in your category, localised landing pages for the Indian cities and segments you're targeting, Google Business Profile setup for your India office, technical SEO adapted for India's mobile-first indexing, and a content strategy that answers the questions Indian buyers are actually asking. The output is organic search visibility that compounds over time — the most cost-efficient lead generation channel in India for startups willing to invest early.</p>
+          <div class="service-tags">
+            <span class="tag">India keyword research</span><span class="tag">City-specific landing pages</span><span class="tag">Google Business Profile</span><span class="tag">Mobile-first SEO</span><span class="tag">India content strategy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">02</div>
+        <div class="service-body">
+          <h3>India Social Media & Brand Building</h3>
+          <p>LinkedIn is where Indian B2B decisions are researched and your credibility as a foreign entrant is first established. Instagram is where D2C brands build desire and cultural relevance. YouTube is where product decisions are made for high-consideration categories. The platforms are familiar — but the content that performs in India is different in tone, format, pacing, and language. We manage your India social presence with content built for Indian professional and consumer audiences: thought leadership on LinkedIn that establishes your India credibility, visual storytelling on Instagram adapted for Indian aesthetics, and YouTube content addressing the specific questions Indian buyers ask before they consider a foreign brand. We also manage regional language content where your target segments make it worthwhile.</p>
+          <div class="service-tags">
+            <span class="tag">LinkedIn brand presence</span><span class="tag">Instagram for India</span><span class="tag">YouTube content strategy</span><span class="tag">Regional language content</span><span class="tag">Founder positioning</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">03</div>
+        <div class="service-body">
+          <h3>Google Ads for India</h3>
+          <p>India is one of the most cost-efficient Google Ads markets in the world — CPCs average 70–85% lower than US rates — but only if your campaigns are structured for how Indians search, what devices they're on, and what conversion actions are realistic at each funnel stage. A US-configured Google Ads account running in India will consistently underperform. We build and manage India-specific campaigns across search, display, and YouTube — with India-native keyword lists, bidding strategies calibrated to Indian CPC benchmarks, ad copy written for Indian buyer motivations, and conversion tracking that accounts for India's longer B2B sales cycles and WhatsApp-first conversion behaviour. Every campaign is reported back to your global team with the metrics that matter: qualified leads, cost-per-acquisition by segment, and pipeline contribution.</p>
+          <div class="service-tags">
+            <span class="tag">India keyword strategy</span><span class="tag">Search & display campaigns</span><span class="tag">YouTube pre-roll ads</span><span class="tag">India CPC optimisation</span><span class="tag">Pipeline attribution</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">04</div>
+        <div class="service-body">
+          <h3>Performance Marketing & India Lead Generation</h3>
+          <p>For B2B startups entering India, performance marketing means generating qualified pipeline from Indian enterprise buyers — CIOs, procurement leads, and business owners actively evaluating solutions in your category. For B2C startups, it means efficient customer acquisition with Indian CAC benchmarks and LTV assumptions. We build and run performance campaigns structured around India's buyer journey — which is longer, more relationship-influenced, and more research-driven than Western markets for B2B, and significantly more value-sensitive for B2C. This includes audience building on LinkedIn and Meta using Indian professional segments, retargeting campaigns adapted for India's longer consideration cycles, and lead nurture flows that convert Indian interest into sales conversations. Full attribution reporting delivered to your global team every week.</p>
+          <div class="service-tags">
+            <span class="tag">B2B lead generation</span><span class="tag">Meta & LinkedIn campaigns</span><span class="tag">Indian audience segmentation</span><span class="tag">Lead nurture flows</span><span class="tag">Weekly attribution reporting</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">05</div>
+        <div class="service-body">
+          <h3>YouTube & Video Marketing for India</h3>
+          <p>India is the world's largest YouTube market by active users, and video is the primary medium through which Indian buyers form opinions about brands they don't yet know. For a foreign startup entering India, this matters enormously: your first impression with a large portion of your potential customers will be a video, not a website. We create and distribute India-specific video content across the formats that drive results: product explainers adapted for Indian use cases, founder videos that build trust with Indian buyers, customer testimonials from Indian users or pilot customers, and pre-roll ad campaigns targeting your exact buyer persona. We also localise your existing global video assets for Indian audiences — adapting narration, on-screen text, and contextual examples where relevant.</p>
+          <div class="service-tags">
+            <span class="tag">Product explainers for India</span><span class="tag">Founder credibility videos</span><span class="tag">Indian customer testimonials</span><span class="tag">Pre-roll ad campaigns</span><span class="tag">Global video localisation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">06</div>
+        <div class="service-body">
+          <h3>WhatsApp & Email Marketing for India</h3>
+          <p>India has over 500 million WhatsApp users, and for a significant portion of Indian businesses and consumers, WhatsApp is their primary digital communication channel. For your India operation, this means WhatsApp is not a nice-to-have marketing channel — it is the channel. We set up WhatsApp Business API campaigns: partner and channel communications, customer onboarding sequences, product update broadcasts, promotional campaigns, and support workflows. All messaging is DLT-registered and compliant with TRAI's commercial communication regulations — a mandatory requirement most foreign startups overlook until they hit a delivery block. Combined with email nurture campaigns built for India's longer B2B sales cycles, this gives you a complete owned-channel communication system from day one.</p>
+          <div class="service-tags">
+            <span class="tag">WhatsApp Business API</span><span class="tag">DLT-compliant messaging</span><span class="tag">Customer onboarding flows</span><span class="tag">Partner communications</span><span class="tag">India email nurture</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY JB NEWGEN -->
+<section class="section bg-navy why">
+  <div class="section-inner">
+    <div class="section-label">How We Work</div>
+    <h2>India digital marketing connected to your global reporting</h2>
+    <p>One of the most common frustrations for global startups running India digital campaigns is the disconnect between what their India agency is doing and what their global CMO can see. We solve this by design — every engagement includes weekly reporting in formats that connect to your global marketing stack.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-check">✓</div>
+        <h4>India-first strategy</h4>
+        <p>Every campaign starts from Indian audience behaviour, platform dynamics, and search intent — not an adaptation of your global campaigns.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-check">✓</div>
+        <h4>Global reporting standards</h4>
+        <p>Weekly performance reports with CAC, CPL, pipeline contribution, and channel attribution metrics your global team can act on immediately.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-check">✓</div>
+        <h4>Content built for India</h4>
+        <p>Ad copy, social content, and video scripts are written by India-fluent leads who understand the cultural nuances that make the difference between content that converts and content that's ignored.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-check">✓</div>
+        <h4>Integrated with your GTM</h4>
+        <p>Your digital marketing is coordinated with your channel partner launch, sales enablement, and India events — so every campaign supports your broader commercial motion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="section-label" style="text-align:center;">Get Started</div>
+    <h2>Ready to build your India digital presence?</h2>
+    <p>Book a free 45-minute India Digital Strategy call. We'll map out the channels, content, and budget allocation that will build your brand and generate pipeline in India's market.</p>
+    <div class="cta-btns">
+      <a href="https://jbnewgen.com/get-a-quote-now/" class="btn-dark">Book Your Free Strategy Call →</a>
+      <a href="mailto:sales@jbnewgen.com" class="btn-outline">Email Us Directly</a>
+    </div>
+    <p style="margin-top:28px;font-size:14px;color:var(--text-light);">JB NewGen Enterprises · Mumbai, India · sales@jbnewgen.com · +91 6362864230</p>
+  </div>
+</section>
+
+<!-- SEO BLOCK -->
+<section class="seo-block">
+  <div class="seo-inner">
+    <h2>India Digital Marketing for Global Startups — What You Need to Know</h2>
+    <p>India's digital ecosystem is one of the world's most dynamic and fastest-growing — but it operates on different platforms, different content formats, and different buyer behaviours than Western markets. At JB NewGen, we build India digital growth strategies specifically for US, EU, and global startups entering India, combining deep knowledge of Indian audience behaviour with the reporting standards global marketing teams expect.</p>
+    <p>Our India digital growth services cover six high-impact areas:</p>
+    <ul>
+      <li>India SEO and search presence for Indian buyer intent</li>
+      <li>LinkedIn, Instagram, and YouTube brand building for India</li>
+      <li>Google Ads campaigns optimised for Indian CPCs and conversion behaviour</li>
+      <li>Performance marketing and B2B lead generation in India</li>
+      <li>YouTube and video marketing adapted for India's video-first discovery behaviour</li>
+      <li>WhatsApp Business API and DLT-compliant email marketing for India</li>
+    </ul>
+    <p>Whether you're a SaaS startup building enterprise pipeline, a D2C brand launching in India's consumer market, or a B2B company establishing channel partner visibility — JB NewGen delivers India digital growth that connects directly to your commercial outcomes.</p>
+    <p><strong>Based in Mumbai. Building India digital growth for global startups across every category.</strong></p>
+  </div>
+</section>
+
+</body>
+</html>

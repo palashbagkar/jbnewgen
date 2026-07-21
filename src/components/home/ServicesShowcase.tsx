@@ -104,22 +104,13 @@ export function ServicesShowcase() {
             <Reveal as="div" variant="pop" delay={220} className="flex flex-col">
               <div
                 key={`${pillar.slug}-col`}
-                className="mx-auto flex w-full max-w-[22rem] flex-1 animate-rise flex-col"
+                className="mx-auto flex w-full max-w-[22rem] flex-1 animate-rise flex-col justify-center"
                 style={{ animationDelay: "300ms" }}
               >
                 <h3 className="text-2xl font-bold leading-tight text-white sm:text-[1.7rem]">{pillar.title}</h3>
-                <div className="mt-auto hidden flex-col gap-2 sm:flex w-full">
-                  {pillar.services.map((s) => (
-                    <Link
-                      key={s.slug}
-                      href={`/services/${pillar.slug}/${s.slug}`}
-                      className="group flex items-center gap-1.5 rounded-[7px] border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[0.75rem] text-ink-200 transition-colors hover:border-flame-400/50 hover:bg-white/[0.06] hover:text-white"
-                    >
-                      <span className="flex-1">{s.title}</span>
-                      <Icon name="arrowUpRight" size={12} className="shrink-0 text-ink-500 transition-colors group-hover:text-flame-400" />
-                    </Link>
-                  ))}
-                </div>
+                <p className="mt-5 text-pretty text-[0.95rem] leading-relaxed text-ink-300">
+                  {pillar.subtext}
+                </p>
               </div>
             </Reveal>
           </div>

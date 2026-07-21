@@ -75,7 +75,7 @@ export default async function SearchPage({
           items={[
             { label: "Services", href: "/services", desc: "4 pillars", icon: "compass" },
             { label: "Our CEO", href: "/about/ceo", desc: "Joyjeet Bose", icon: "users" },
-            { label: "CPaaS & Omnichannel", href: "/services/cpaas-omnichannel", desc: "WhatsApp, SMS, voice", icon: "chat" },
+            { label: "Customer Communication", href: "/services/cpaas-omnichannel", desc: "WhatsApp, SMS, voice", icon: "chat" },
             { label: "Insights", href: "/insights", desc: "Articles & categories", icon: "bulb" },
             { label: "Careers", href: "/careers", desc: "Open roles", icon: "briefcase" },
             { label: "Get a quote", href: "/quote", desc: "Start a project", icon: "spark" },

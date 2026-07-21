@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>India Market Entry & GTM Consultancy | JB NewGen</title>
+<meta name="description" content="JB NewGen helps US, EU, and global startups enter and scale in India — with on-ground GTM strategy, channel setup, partner networks, and end-to-end execution." />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0B1B38;
+    --navy-mid: #162B52;
+    --orange: #E8540A;
+    --orange-light: #FF6B1A;
+    --cream: #F9F6F0;
+    --cream-dark: #EDE8DF;
+    --text-body: #2C2C2A;
+    --text-muted: #5F5E5A;
+    --text-light: #888780;
+    --white: #FFFFFF;
+    --border: rgba(11,27,56,0.12);
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--white);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--navy);
+  }
+
+  /* ---- HERO ---- */
+  .hero {
+    background: var(--navy);
+    padding: 100px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 480px; height: 480px;
+    border-radius: 50%;
+    background: var(--orange);
+    opacity: 0.08;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 30%;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: var(--orange);
+    opacity: 0.05;
+  }
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(232,84,10,0.15);
+    color: #FF8C4A;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    border: 1px solid rgba(232,84,10,0.3);
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    color: var(--white);
+    font-size: clamp(32px, 5vw, 52px);
+    margin-bottom: 20px;
+    max-width: 720px;
+  }
+  .hero h1 span { color: var(--orange-light); }
+  .hero p {
+    color: rgba(255,255,255,0.72);
+    font-size: 18px;
+    font-weight: 300;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 40px;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--orange);
+    color: var(--white);
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--orange-light); }
+  .btn-secondary {
+    background: transparent;
+    color: rgba(255,255,255,0.8);
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.25);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+
+  /* ---- PAIN POINTS ---- */
+  .pain {
+    background: var(--cream);
+    padding: 72px 48px;
+  }
+  .pain-inner { max-width: 900px; margin: 0 auto; }
+  .section-label {
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 16px;
+  }
+  .pain h2 {
+    font-size: clamp(24px, 3.5vw, 36px);
+    margin-bottom: 16px;
+    max-width: 680px;
+  }
+  .pain > .pain-inner > p {
+    color: var(--text-muted);
+    font-size: 17px;
+    max-width: 640px;
+    margin-bottom: 48px;
+  }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .pain-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 24px;
+  }
+  .pain-icon {
+    width: 40px; height: 40px;
+    background: rgba(232,84,10,0.08);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+  .pain-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--navy);
+  }
+  .pain-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* ---- WHAT WE DO ---- */
+  .what {
+    padding: 88px 48px;
+    background: var(--white);
+  }
+  .what-inner { max-width: 1000px; margin: 0 auto; }
+  .what-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+    align-items: end;
+  }
+  .what-header h2 { font-size: clamp(26px, 3.5vw, 38px); }
+  .what-header p { color: var(--text-muted); font-size: 16px; line-height: 1.75; }
+
+  /* ---- SERVICES ---- */
+  .services { display: flex; flex-direction: column; gap: 0; }
+  .service-item {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 0 28px;
+    padding: 36px 0;
+    border-top: 1px solid var(--border);
+  }
+  .service-item:last-child { border-bottom: 1px solid var(--border); }
+  .service-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--orange);
+    padding-top: 4px;
+  }
+  .service-body h3 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--navy);
+  }
+  .service-body p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    max-width: 680px;
+    margin-bottom: 16px;
+  }
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--navy-mid);
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  /* ---- WHY US ---- */
+  .why {
+    background: var(--navy);
+    padding: 88px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .why::before {
+    content: '';
+    position: absolute;
+    bottom: -100px; right: -100px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: var(--orange);
+    opacity: 0.07;
+  }
+  .why-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+  .why .section-label { color: #FF8C4A; }
+  .why h2 { color: var(--white); font-size: clamp(26px, 3.5vw, 38px); margin-bottom: 16px; }
+  .why > .why-inner > p { color: rgba(255,255,255,0.65); font-size: 17px; margin-bottom: 56px; max-width: 600px; }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .why-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 28px 24px;
+  }
+  .why-card h4 {
+    color: var(--white);
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .why-card p {
+    color: rgba(255,255,255,0.58);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .why-check {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: rgba(232,84,10,0.2);
+    border: 1px solid rgba(232,84,10,0.4);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: #FF8C4A;
+  }
+
+  /* ---- INDUSTRIES ---- */
+  .industries {
+    background: var(--cream);
+    padding: 88px 48px;
+  }
+  .industries-inner { max-width: 960px; margin: 0 auto; }
+  .industries h2 { font-size: clamp(26px, 3.5vw, 36px); margin-bottom: 12px; }
+  .industries > .industries-inner > p { color: var(--text-muted); font-size: 16px; max-width: 560px; margin-bottom: 48px; }
+  .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .industry-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .ind-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .industry-card h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--navy);
+  }
+  .industry-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ---- HOW IT WORKS ---- */
+  .process {
+    padding: 88px 48px;
+    background: var(--white);
+  }
+  .process-inner { max-width: 860px; margin: 0 auto; }
+  .process h2 { font-size: clamp(26px, 3.5vw, 36px); margin-bottom: 12px; }
+  .process > .process-inner > p { color: var(--text-muted); font-size: 16px; max-width: 540px; margin-bottom: 56px; }
+  .steps { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 0 24px;
+    padding-bottom: 40px;
+    position: relative;
+  }
+  .step:not(:last-child) .step-line {
+    position: absolute;
+    left: 23px;
+    top: 48px;
+    bottom: 0;
+    width: 2px;
+    background: var(--cream-dark);
+  }
+  .step-dot {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--orange);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--orange);
+    background: var(--white);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .step-content { padding-top: 10px; }
+  .step-content h4 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--navy);
+  }
+  .step-content p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 560px;
+  }
+
+  /* ---- CASE STUDY TEASER ---- */
+  .case {
+    background: linear-gradient(135deg, #0B1B38 0%, #162B52 100%);
+    padding: 72px 48px;
+  }
+  .case-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .case .section-label { color: #FF8C4A; }
+  .case h2 { color: var(--white); font-size: clamp(22px, 3vw, 32px); margin-bottom: 16px; }
+  .case p { color: rgba(255,255,255,0.65); font-size: 16px; line-height: 1.75; }
+  .case-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .stat-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--orange-light);
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* ---- CTA ---- */
+  .cta-section {
+    background: var(--cream);
+    padding: 88px 48px;
+    text-align: center;
+  }
+  .cta-inner { max-width: 640px; margin: 0 auto; }
+  .cta-section h2 { font-size: clamp(26px, 3.5vw, 38px); margin-bottom: 16px; }
+  .cta-section p { color: var(--text-muted); font-size: 17px; margin-bottom: 40px; }
+  .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary-dark {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  .btn-outline-dark {
+    background: transparent;
+    color: var(--navy);
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 16px 32px;
+    border-radius: 8px;
+    border: 1.5px solid var(--navy);
+    text-decoration: none;
+  }
+
+  /* ---- SEO COPY BLOCK ---- */
+  .seo-block {
+    padding: 72px 48px;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+  }
+  .seo-inner { max-width: 780px; margin: 0 auto; }
+  .seo-inner h2 { font-size: 26px; margin-bottom: 16px; }
+  .seo-inner p { color: var(--text-muted); font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
+  .seo-inner ul { padding-left: 20px; color: var(--text-muted); font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
+
+  @media (max-width: 700px) {
+    .hero, .pain, .what, .why, .industries, .process, .case, .cta-section, .seo-block { padding-left: 24px; padding-right: 24px; }
+    .what-header, .case-inner { grid-template-columns: 1fr; gap: 32px; }
+    .why-grid, .pain-grid, .industry-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ======================== HERO ======================== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">India Market Entry Specialists</div>
+    <h1>Your <span>India GTM partner</span> — from strategy to on-ground execution</h1>
+    <p>We help US, EU, and global startups go from "we want to enter India" to "we are operating in India" — in months, not years. On-ground expertise. Real networks. End-to-end accountability.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Book a Free Strategy Call →</a>
+      <a href="#services" class="btn-secondary">See What We Do</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== PAIN POINTS ======================== -->
+<section class="pain">
+  <div class="pain-inner">
+    <div class="section-label">The India Entry Challenge</div>
+    <h2>India is one of the world's biggest opportunities. It's also one of the hardest markets to enter alone.</h2>
+    <p>Most global startups underestimate India's complexity — and overestimate how much their existing playbook will transfer. Here's what gets in the way:</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">🗺️</div>
+        <h3>No local distribution network</h3>
+        <p>Building a channel from scratch takes 12–18 months without the right introductions. The wrong partners cost you far more.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">⚖️</div>
+        <h3>Regulatory complexity</h3>
+        <p>From GST compliance to import licensing to data localisation — India's regulatory landscape is real and non-negotiable.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🤝</div>
+        <h3>Relationship-driven culture</h3>
+        <p>Indian business runs on trust and personal relationships. Cold outreach doesn't open the doors that a warm introduction does.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💡</div>
+        <h3>Pricing & positioning mismatch</h3>
+        <p>Your global pricing and messaging rarely translate directly. India requires deliberate localisation across every customer touchpoint.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== WHAT WE DO ======================== -->
+<section class="what" id="services">
+  <div class="what-inner">
+    <div class="what-header">
+      <div>
+        <div class="section-label">Our Services</div>
+        <h2>Everything you need to launch, operate, and scale in India</h2>
+      </div>
+      <p>We don't just advise — we work alongside your team, acting as your extended India office until you're ready to stand independently. Every service is built around one goal: reducing your time to market and increasing your probability of success.</p>
+    </div>
+
+    <div class="services">
+
+      <div class="service-item">
+        <div class="service-num">01</div>
+        <div class="service-body">
+          <h3>India GTM Blueprint</h3>
+          <p>Before you spend a dollar on India, you need to know exactly where to play and how to win. We conduct deep market sizing, segment analysis, competitive mapping, and customer research to build a launch roadmap tailored to your product and category. This includes pricing strategy for India's multi-tier market, positioning that resonates with Indian buyers, and a clear sequencing plan — which cities first, which segments to target, and what milestones define success in Year 1.</p>
+          <div class="service-tags">
+            <span class="tag">Market sizing</span>
+            <span class="tag">Competitive mapping</span>
+            <span class="tag">India pricing strategy</span>
+            <span class="tag">Launch sequencing</span>
+            <span class="tag">Segment analysis</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">02</div>
+        <div class="service-body">
+          <h3>Building Your India Sales Network</h3>
+          <p>Distribution is the single most common reason global startups fail in India — either they can't find the right partners, or they onboard the wrong ones. We leverage our established network across Tier 1 and Tier 2 cities to identify, vet, and onboard the right distributors, resellers, channel partners, and retail networks for your category. We handle due diligence, commercial negotiation, and the structural setup of your 2–3 tier distribution model — so you start with a channel that actually performs.</p>
+          <div class="service-tags">
+            <span class="tag">Distributor identification</span>
+            <span class="tag">Partner vetting</span>
+            <span class="tag">Onboarding</span>
+            <span class="tag">Tier 1 & 2 cities</span>
+            <span class="tag">Channel architecture</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">03</div>
+        <div class="service-body">
+          <h3>India-Ready Operations</h3>
+          <p>Operating in India requires policies and processes built specifically for its regulatory environment and business culture. We design partner agreements, pricing structures, margin frameworks, returns policies, and compliance protocols adapted for India — saving you from costly missteps. Whether it's GST-compliant invoicing, FSSAI considerations for consumer products, or IT Act compliance for SaaS, we ensure your operational foundation is solid before your first rupee of revenue.</p>
+          <div class="service-tags">
+            <span class="tag">Partner agreements</span>
+            <span class="tag">Pricing & margin design</span>
+            <span class="tag">Compliance frameworks</span>
+            <span class="tag">Process documentation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">04</div>
+        <div class="service-body">
+          <h3>Partner Activation & Retention</h3>
+          <p>In India, relationships aren't built over email — they're built in rooms. We design and run channel engagement programmes that turn transactional partners into committed advocates for your brand. This includes city roadshows, partner summits, product workshops, and ongoing digital engagement through webinars and training modules. Partners who feel invested in your brand sell harder. We make sure yours do.</p>
+          <div class="service-tags">
+            <span class="tag">Roadshows</span>
+            <span class="tag">Partner events</span>
+            <span class="tag">Webinars & training</span>
+            <span class="tag">Loyalty programmes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">05</div>
+        <div class="service-body">
+          <h3>Launch Execution</h3>
+          <p>Strategy without execution is just a document. Our end-to-end implementation service means we sit alongside your team and actually drive your India launch — managing vendor relationships, coordinating logistics, hiring and briefing local staff or agency partners, and tracking performance against your GTM milestones. We act as your India country lead until you're ready to build that capability internally. On time. On budget. With no surprises.</p>
+          <div class="service-tags">
+            <span class="tag">On-ground management</span>
+            <span class="tag">Local hiring support</span>
+            <span class="tag">Vendor coordination</span>
+            <span class="tag">Milestone tracking</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">06</div>
+        <div class="service-body">
+          <h3>Sales Enablement for India</h3>
+          <p>Your global sales playbook needs translation — not just linguistically, but culturally. Indian buyers ask different questions, need different proof points, and respond to different motivators than your existing customers. We train your local team or channel partners on your product, your value proposition, and a sales process adapted for Indian buyer behaviour — so every conversation moves in the right direction from day one.</p>
+          <div class="service-tags">
+            <span class="tag">Sales training</span>
+            <span class="tag">India-adapted playbooks</span>
+            <span class="tag">Leadership development</span>
+            <span class="tag">Channel sales coaching</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================== WHY JB NEWGEN ======================== -->
+<section class="why">
+  <div class="why-inner">
+    <div class="section-label">Why JB NewGen</div>
+    <h2>We are not a consulting firm. We are your India team.</h2>
+    <p>The difference between advice and outcomes is execution. We show up as partners, not report-writers.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-check">✓</div>
+        <h4>On-ground presence</h4>
+        <p>Based in Mumbai, with active networks across metros and Tier 2 cities. We know the people who matter in your category.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-check">✓</div>
+        <h4>End-to-end accountability</h4>
+        <p>We don't hand over a strategy deck and disappear. We stay in the room through execution, iteration, and early traction.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-check">✓</div>
+        <h4>Speed to market</h4>
+        <p>Our existing partner network and regulatory familiarity cuts your go-live timeline from 18 months to 90–120 days.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-check">✓</div>
+        <h4>Global-local fluency</h4>
+        <p>We understand what global founders expect — clarity, accountability, measurable results — and we deliver it in an Indian context.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== INDUSTRIES ======================== -->
+<section class="industries">
+  <div class="industries-inner">
+    <div class="section-label">Industries We Serve</div>
+    <h2>Sector experience across the categories that matter most</h2>
+    <p>India's market dynamics vary significantly by sector. We bring specialised GTM experience across the verticals where global startups are most actively expanding.</p>
+    <div class="industry-grid">
+      <div class="industry-card">
+        <div class="ind-icon">💻</div>
+        <div>
+          <h4>SaaS & Enterprise Tech</h4>
+          <p>India market entry for B2B SaaS — channel partner setup, India-pricing, and enterprise sales motion.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="ind-icon">🛒</div>
+        <div>
+          <h4>D2C & Consumer Products</h4>
+          <p>Retail distribution, e-commerce marketplace strategy, and localised brand positioning for Indian consumers.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="ind-icon">🏥</div>
+        <div>
+          <h4>Healthtech & Pharma</h4>
+          <p>Regulatory navigation, hospital and clinic channel development, and CDSCO compliance support.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="ind-icon">🏭</div>
+        <div>
+          <h4>Manufacturing & Industrials</h4>
+          <p>Distributor and dealer network development, transfer pricing, and multi-state operations setup.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="ind-icon">💳</div>
+        <div>
+          <h4>Fintech & Payments</h4>
+          <p>India-stack integration (UPI, BBPS), partnership with banking and NBFC ecosystems, RBI compliance guidance.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="ind-icon">🎓</div>
+        <div>
+          <h4>Edtech & Learning</h4>
+          <p>B2C growth in India's massive learner market, plus B2B institutional partnerships with schools and colleges.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== HOW IT WORKS ======================== -->
+<section class="process">
+  <div class="process-inner">
+    <div class="section-label">How It Works</div>
+    <h2>From first call to first rupee of revenue</h2>
+    <p>A structured, milestone-driven process — so you always know where you are and what comes next.</p>
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-dot">1</div>
+        <div class="step-line"></div>
+        <div class="step-content">
+          <h4>Discovery & India Readiness Assessment</h4>
+          <p>We start with a structured conversation about your product, your existing customers, and your India ambitions. We assess product-market fit for India, flag any regulatory or operational considerations, and identify the fastest viable path to market. No charge. No commitment. Just clarity.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-dot">2</div>
+        <div class="step-line"></div>
+        <div class="step-content">
+          <h4>GTM Blueprint & Market Mapping</h4>
+          <p>Over 4–6 weeks, we deliver a detailed India market entry plan: target segments, geographic prioritisation, competitive landscape, pricing and positioning recommendations, and a channel architecture tailored to your category. You leave with a document you can actually act on — not 80 slides of frameworks.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-dot">3</div>
+        <div class="step-line"></div>
+        <div class="step-content">
+          <h4>Partner Identification & Onboarding</h4>
+          <p>We activate our network to surface, vet, and introduce the right distribution and channel partners. We manage the commercial conversations, negotiate terms, and build the agreements — so you start with partners who are committed and qualified.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-dot">4</div>
+        <div class="step-line"></div>
+        <div class="step-content">
+          <h4>Launch Execution & On-Ground Support</h4>
+          <p>We manage your India launch operationally — coordinating logistics, training partners, running activation events, and tracking performance weekly. Think of us as your India country manager, without the cost of a full-time hire before you're ready.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-dot">5</div>
+        <div class="step-line"></div>
+        <div class="step-content">
+          <h4>Scale & Transition</h4>
+          <p>Once traction is established, we help you build your own internal India team, transfer institutional knowledge, and create the systems that let the business run independently. We stay on as advisors for as long as you need us.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CASE STUDY TEASER ======================== -->
+<section class="case">
+  <div class="case-inner">
+    <div>
+      <div class="section-label">Impact</div>
+      <h2>What a structured India entry actually delivers</h2>
+      <p style="color:rgba(255,255,255,0.65); font-size:16px; line-height:1.75; margin-top:16px;">A US-based B2B SaaS company engaged JB NewGen to lead their India market entry. They had zero local presence, no distribution contacts, and 90 days to show their board early traction.</p>
+      <p style="color:rgba(255,255,255,0.65); font-size:16px; line-height:1.75; margin-top:12px;">In 110 days, they had an operational channel across 4 metros, their first 3 enterprise pilot customers, and a local partner manager on the ground. Their Year 1 India ARR exceeded original projections by 40%.</p>
+    </div>
+    <div class="case-stats">
+      <div class="stat-card">
+        <div class="stat-num">110</div>
+        <div class="stat-label">Days from kickoff to live channel across 4 metros</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">+40%</div>
+        <div class="stat-label">Year 1 India ARR vs. original board projections</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Enterprise pilot customers signed in first quarter</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CTA ======================== -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="section-label" style="text-align:center;">Get Started</div>
+    <h2>Ready to make India your next growth market?</h2>
+    <p>Book a free 45-minute India Entry Strategy Call. We'll map out the opportunities, flag the real risks, and tell you honestly what it takes — with no obligation to proceed.</p>
+    <div class="cta-btns">
+      <a href="https://jbnewgen.com/get-a-quote-now/" class="btn-primary-dark">Book Your Free Strategy Call →</a>
+      <a href="mailto:sales@jbnewgen.com" class="btn-outline-dark">Email Us Directly</a>
+    </div>
+    <p style="margin-top:28px; font-size:14px; color:var(--text-light);">JB NewGen Enterprises · Mumbai, India · sales@jbnewgen.com · +91 6362864230</p>
+  </div>
+</section>
+
+<!-- ======================== SEO TEXT BLOCK ======================== -->
+<section class="seo-block">
+  <div class="seo-inner">
+    <h2>India Market Entry Consultancy — What You Need to Know</h2>
+    <p>India is the world's most populous country, the fifth-largest economy, and among the fastest-growing digital markets globally. For US and European startups, it represents an unparalleled growth opportunity — but one that requires a fundamentally different approach to market entry than expansion into Europe or Southeast Asia.</p>
+    <p>At JB NewGen, we specialise in helping global startups navigate the structural complexity of India: its 28 states with different tax and regulatory regimes, its multi-tier distribution ecosystem, its diverse consumer segments, and its deeply relationship-driven business culture. Our India market entry consultancy services cover every stage of the entry journey — from initial market assessment to live operations.</p>
+    <p>Our core business consultancy services for global startups include:</p>
+    <ul>
+      <li>India Go-To-Market (GTM) strategy and launch planning</li>
+      <li>Channel and distribution partner identification and setup</li>
+      <li>India-specific pricing, positioning, and partner policy design</li>
+      <li>Partner engagement, activation, and retention programmes</li>
+      <li>End-to-end launch execution and on-ground management</li>
+      <li>Sales training and enablement adapted for Indian buyer behaviour</li>
+    </ul>
+    <p>Whether you are a pre-seed startup testing India product-market fit, a Series B company ready for full market entry, or a growth-stage business looking to accelerate an existing India operation, JB NewGen brings the on-ground expertise, the established networks, and the execution capacity to make your India ambitions a reality.</p>
+    <p>We serve startups and scaleups across SaaS, consumer products, fintech, healthtech, edtech, and manufacturing — with deep experience across Maharashtra, Karnataka, Delhi-NCR, Tamil Nadu, and Tier 2 expansion markets.</p>
+    <p><strong>Based in Mumbai. Operating across India. Accountable to your outcomes.</strong></p>
+  </div>
+</section>
+
+</body>
+</html>

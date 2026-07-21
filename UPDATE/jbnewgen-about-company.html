@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About JB NewGen Enterprises — India's On-Ground Partner for Global Startups</title>
+<meta name="description" content="JB NewGen Enterprises is India's specialist market entry and GTM partner for US, EU, and global startups. Led by Joyjeet Bose with 35 years of India market experience and a network of 7,000+ channel partners." />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0B1B38; --navy-mid: #162B52; --orange: #E8540A; --orange-light: #FF6B1A;
+    --cream: #F9F6F0; --cream-dark: #EDE8DF; --text-body: #2C2C2A;
+    --text-muted: #5F5E5A; --text-light: #888780; --white: #FFFFFF;
+    --border: rgba(11,27,56,0.12);
+  }
+  body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.7; color: var(--text-body); background: var(--white); }
+  h1, h2, h3, h4 { font-family: 'Sora', sans-serif; font-weight: 700; line-height: 1.2; color: var(--navy); }
+
+  /* HERO */
+  .hero { background: var(--navy); padding: 100px 48px 80px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -120px; right: -120px; width: 480px; height: 480px; border-radius: 50%; background: var(--orange); opacity: 0.08; }
+  .hero::after { content: ''; position: absolute; bottom: -80px; left: 30%; width: 300px; height: 300px; border-radius: 50%; background: var(--orange); opacity: 0.05; }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge { display: inline-block; background: rgba(232,84,10,0.15); color: #FF8C4A; font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; border: 1px solid rgba(232,84,10,0.3); margin-bottom: 28px; }
+  .hero h1 { color: var(--white); font-size: clamp(32px, 5vw, 52px); margin-bottom: 20px; max-width: 760px; }
+  .hero h1 span { color: var(--orange-light); }
+  .hero p { color: rgba(255,255,255,0.72); font-size: 18px; font-weight: 300; max-width: 620px; line-height: 1.75; margin-bottom: 40px; }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary { background: var(--orange); color: var(--white); font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; padding: 14px 28px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
+  .btn-primary:hover { background: var(--orange-light); }
+  .btn-secondary { background: transparent; color: rgba(255,255,255,0.8); font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 500; padding: 14px 28px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.25); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+
+  /* SHARED */
+  .section-label { font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; }
+  .section { padding: 88px 48px; }
+  .section-inner { max-width: 1000px; margin: 0 auto; }
+  .bg-cream { background: var(--cream); }
+  .bg-navy { background: var(--navy); }
+  .bg-white { background: var(--white); }
+
+  /* WHAT WE ARE */
+  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .intro-grid h2 { font-size: clamp(26px, 3.5vw, 38px); margin-bottom: 20px; }
+  .intro-grid p { color: var(--text-muted); font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
+  .intro-grid p strong { color: var(--navy); font-weight: 600; }
+  .intro-stats { display: flex; flex-direction: column; gap: 16px; }
+  .stat-block { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px; border-left: 4px solid var(--orange); }
+  .stat-num { font-family: 'Sora', sans-serif; font-size: 36px; font-weight: 700; color: var(--orange); line-height: 1; margin-bottom: 6px; }
+  .stat-desc { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+  /* WHAT MAKES US DIFFERENT */
+  .diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 48px; }
+  .diff-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 32px 28px; }
+  .diff-icon { width: 44px; height: 44px; background: rgba(232,84,10,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 20px; }
+  .diff-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--navy); }
+  .diff-card p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+  /* OUR STORY */
+  .story { max-width: 780px; }
+  .story h2 { font-size: clamp(26px, 3.5vw, 36px); margin-bottom: 24px; }
+  .story p { color: var(--text-muted); font-size: 16px; line-height: 1.85; margin-bottom: 20px; }
+  .story p strong { color: var(--navy); font-weight: 600; }
+
+  /* NETWORK PROOF */
+  .network-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 48px; }
+  .network-item { background: var(--white); padding: 28px 24px; text-align: center; }
+  .network-num { font-family: 'Sora', sans-serif; font-size: 32px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .network-label { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+  /* SERVICES OVERVIEW */
+  .services-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 48px; }
+  .svc-card { border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; position: relative; overflow: hidden; }
+  .svc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange); }
+  .svc-num { font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 600; color: var(--orange); letter-spacing: 0.1em; margin-bottom: 12px; }
+  .svc-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--navy); }
+  .svc-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+  .svc-link { display: inline-block; margin-top: 14px; font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; color: var(--orange); text-decoration: none; }
+
+  /* QUOTE */
+  .quote-section { background: linear-gradient(135deg, #0B1B38 0%, #162B52 100%); padding: 72px 48px; }
+  .quote-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+  .quote-mark { font-size: 64px; color: var(--orange); line-height: 0.8; font-family: Georgia, serif; margin-bottom: 24px; display: block; }
+  .quote-text { font-size: clamp(18px, 2.5vw, 24px); color: rgba(255,255,255,0.9); font-style: italic; line-height: 1.6; margin-bottom: 28px; font-weight: 300; }
+  .quote-attr { font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; color: var(--orange-light); letter-spacing: 0.05em; }
+
+  /* GTM BRIDGE TEASER */
+  .bridge-section { background: var(--cream); padding: 72px 48px; }
+  .bridge-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .bridge-section .section-label { margin-bottom: 16px; }
+  .bridge-section h2 { font-size: clamp(24px, 3vw, 34px); margin-bottom: 16px; }
+  .bridge-section p { color: var(--text-muted); font-size: 16px; line-height: 1.8; margin-bottom: 20px; }
+  .bridge-features { display: flex; flex-direction: column; gap: 12px; }
+  .bridge-feat { display: flex; gap: 12px; align-items: flex-start; }
+  .bridge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); flex-shrink: 0; margin-top: 7px; }
+  .bridge-feat p { font-size: 15px; color: var(--text-muted); margin: 0; }
+  .bridge-feat strong { color: var(--navy); }
+  .bridge-cta { background: var(--navy); border-radius: 16px; padding: 40px 36px; }
+  .bridge-cta h3 { color: var(--white); font-size: 20px; margin-bottom: 12px; }
+  .bridge-cta p { color: rgba(255,255,255,0.65); font-size: 15px; margin-bottom: 24px; line-height: 1.7; }
+  .btn-orange { background: var(--orange); color: var(--white); font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 8px; text-decoration: none; display: inline-block; }
+
+  /* CTA */
+  .cta-section { background: var(--white); padding: 88px 48px; text-align: center; border-top: 1px solid var(--border); }
+  .cta-inner { max-width: 640px; margin: 0 auto; }
+  .cta-section h2 { font-size: clamp(26px, 3.5vw, 38px); margin-bottom: 16px; }
+  .cta-section p { color: var(--text-muted); font-size: 17px; margin-bottom: 40px; }
+  .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-dark { background: var(--navy); color: var(--white); font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; padding: 16px 32px; border-radius: 8px; text-decoration: none; }
+  .btn-outline { background: transparent; color: var(--navy); font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 500; padding: 16px 32px; border-radius: 8px; border: 1.5px solid var(--navy); text-decoration: none; }
+
+  @media (max-width: 700px) {
+    .hero, .section, .quote-section, .bridge-section, .cta-section { padding-left: 24px; padding-right: 24px; }
+    .intro-grid, .bridge-inner { grid-template-columns: 1fr; gap: 40px; }
+    .diff-grid, .services-overview, .network-bar { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">About JB NewGen Enterprises</div>
+    <h1>India's on-ground partner for <span>global startups entering India</span></h1>
+    <p>We are not a generic consulting firm. We are the India team you don't have yet — with 35 years of market experience, a live network of 7,000+ channel partners, and a track record of driving 200–500% revenue growth for the organisations we work with.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Book a Free India Entry Call →</a>
+      <a href="#story" class="btn-secondary">Our Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE ARE -->
+<section class="section bg-white">
+  <div class="section-inner">
+    <div class="intro-grid">
+      <div>
+        <div class="section-label">Who We Are</div>
+        <h2>The India expertise that global startups need — and rarely find in one place</h2>
+        <p>JB NewGen Enterprises is a Mumbai-based market entry and GTM consultancy built specifically to help <strong>US, EU, and global startups establish, operate, and scale in India.</strong> We combine deep India market knowledge with the accountability and reporting standards that global founders and investors expect.</p>
+        <p>We are not a research firm that hands you a market report. We are not an agency that runs campaigns in isolation. We are an <strong>execution partner</strong> — the organisation that sits alongside your team from your first conversation about India to your first hundred customers in the market.</p>
+        <p>India is one of the world's most consequential growth opportunities. It is also one of the most structurally complex markets to enter alone. That complexity — the multi-tier distribution landscape, the regulatory environment, the relationship-driven business culture, the India-specific digital infrastructure — is exactly what we exist to navigate on your behalf.</p>
+      </div>
+      <div class="intro-stats">
+        <div class="stat-block">
+          <div class="stat-num">35+</div>
+          <div class="stat-desc">Years of India market experience led by CEO Joyjeet Bose across Tata, Bharti, and enterprise technology sectors</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">7,000+</div>
+          <div class="stat-desc">Channel partners in our active India network across Tier 1, Tier 2, and Tier 3 markets — available to your launch from Day 1</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">30,000+</div>
+          <div class="stat-desc">Retail touchpoints across our distribution ecosystem — built over decades of on-ground market development</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">200–500%</div>
+          <div class="stat-desc">Revenue growth delivered across multiple organisations through our GTM and channel development frameworks</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT MAKES US DIFFERENT -->
+<section class="section bg-cream">
+  <div class="section-inner">
+    <div class="section-label">What Makes Us Different</div>
+    <h2 style="font-size:clamp(26px,3.5vw,38px);margin-bottom:12px;max-width:680px;">Four things that separate JB NewGen from every other India consultancy</h2>
+    <p style="color:var(--text-muted);font-size:17px;max-width:620px;">Most India consultancies give you frameworks. We give you outcomes. Here's what that actually means in practice.</p>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon">🗺️</div>
+        <h3>We have the network — not just the knowledge</h3>
+        <p>Our 7,000+ channel partner network and 200+ distributor relationships are not theoretical. They are live, vetted relationships across India's key metros and Tier 2 cities that we activate for your launch from Day 1. Most consultancies tell you how to find partners. We introduce you to them.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">⚡</div>
+        <h3>We compress your India timeline from 18 months to 90 days</h3>
+        <p>The learning curve for India market entry typically costs foreign companies 12–18 months and significant budget before they establish real traction. Our existing infrastructure — channel network, regulatory knowledge, operational playbooks — eliminates that curve entirely. You start where most companies arrive after a year.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🤝</div>
+        <h3>We execute — we don't just advise</h3>
+        <p>Our engagement model is built around delivery, not decks. We manage partner onboarding, run activation events, coordinate logistics, brief local staff, and track performance weekly. We act as your India country lead until you're ready to build that capability internally — with full accountability for outcomes, not just recommendations.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🌐</div>
+        <h3>We speak both languages — global and local</h3>
+        <p>We understand what global founders, boards, and investors expect: clarity, weekly reporting, measurable milestones, and financial accountability. And we deliver that in an Indian operational context — bridging the communication and expectation gap that kills most foreign companies' India ambitions before they find traction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="section bg-white" id="story">
+  <div class="section-inner">
+    <div class="story">
+      <div class="section-label">Our Story</div>
+      <h2>Built from 35 years of doing — not advising</h2>
+      <p>JB NewGen was founded by <strong>Joyjeet Bose</strong> after three and a half decades of building sales organisations, channel networks, and distribution ecosystems for some of India's most significant enterprises — including Tata Teleservices, Hexacom India (part of Airtel), and Bharti BT Internet.</p>
+      <p>Over that career, Joyjeet built and led organisations that took products from zero to national distribution — establishing networks of 7,000+ channel partners and 30,000+ retail touchpoints, driving revenue growth of 200% to 500%, and navigating India's regulatory and market complexity at every scale from startup to large enterprise.</p>
+      <p>What he saw repeatedly was that <strong>global companies entering India were making the same expensive mistakes</strong> — not because they lacked ambition or resources, but because they lacked on-ground expertise and a trusted local partner who could operate at the intersection of global standards and Indian market realities.</p>
+      <p>JB NewGen was built to be that partner. Not a research firm. Not an agency. A genuine execution partner — with the network, the knowledge, and the accountability to help global startups enter India and build something that lasts.</p>
+      <p>Today, JB NewGen serves global startups across SaaS, fintech, D2C, healthtech, edtech, and manufacturing — providing India market entry strategy, channel development, tech readiness, digital growth, and communication infrastructure from a single, accountable team based in Mumbai.</p>
+    </div>
+
+    <!-- Network proof bar -->
+    <div class="network-bar">
+      <div class="network-item">
+        <div class="network-num">7,000+</div>
+        <div class="network-label">Channel partners across India</div>
+      </div>
+      <div class="network-item">
+        <div class="network-num">200+</div>
+        <div class="network-label">Active distributor relationships</div>
+      </div>
+      <div class="network-item">
+        <div class="network-num">30,000+</div>
+        <div class="network-label">Retail touchpoints nationwide</div>
+      </div>
+      <div class="network-item">
+        <div class="network-num">35+</div>
+        <div class="network-label">Years of India market expertise</div>
+      </div>
+      <div class="network-item">
+        <div class="network-num">90 days</div>
+        <div class="network-label">Typical time to live India channel</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES OVERVIEW -->
+<section class="section bg-cream">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <h2 style="font-size:clamp(26px,3.5vw,36px);margin-bottom:12px;">Four integrated services — one India entry outcome</h2>
+    <p style="color:var(--text-muted);font-size:17px;max-width:620px;margin-bottom:0;">Every service we offer is designed to support one goal: getting your company to market in India faster, more compliantly, and with a stronger foundation than you could build alone.</p>
+    <div class="services-overview">
+      <div class="svc-card">
+        <div class="svc-num">SERVICE 01</div>
+        <h3>India Market Entry & GTM</h3>
+        <p>Market sizing, GTM blueprint, channel partner setup, partner activation, and end-to-end launch execution. Your complete India go-to-market — delivered, not just designed.</p>
+        <a href="/service/gtm-ops-consultancy/" class="svc-link">Learn more →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">SERVICE 02</div>
+        <h3>India Tech Readiness</h3>
+        <p>India-stack integration (UPI, WhatsApp, Aadhaar), CRM setup for India's channel model, cloud compliance under the DPDP Act, and process automation for India operations.</p>
+        <a href="/service/digital-transformation/" class="svc-link">Learn more →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">SERVICE 03</div>
+        <h3>India Digital Growth</h3>
+        <p>India SEO, YouTube and video marketing, Google Ads optimised for Indian CPCs, WhatsApp marketing, and performance campaigns connected to your global reporting.</p>
+        <a href="/service/digital-marketing/" class="svc-link">Learn more →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">SERVICE 04</div>
+        <h3>India Customer Communication</h3>
+        <p>WhatsApp Business API, DLT-registered SMS and RCS, Hindi and regional language IVR, OTP optimisation, and unified omnichannel dashboards — compliant from day one.</p>
+        <a href="/service/cpaas-omnichannel/" class="svc-link">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CEO QUOTE -->
+<section class="quote-section">
+  <div class="quote-inner">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">India is not a market you figure out from the outside. Every foreign company that has built something meaningful here did it with on-ground partners who understood the culture, the channels, and the complexity. That's what JB NewGen is — the India team you don't have yet, working as if your success is our own.</p>
+    <div class="quote-attr">Joyjeet Bose — Founder & CEO, JB NewGen Enterprises</div>
+  </div>
+</section>
+
+<!-- GTM BRIDGE TEASER -->
+<section class="bridge-section">
+  <div class="bridge-inner">
+    <div>
+      <div class="section-label">Coming Soon</div>
+      <h2>GTM Bridge — India's marketplace for global startups, local partners, and enterprise buyers</h2>
+      <p>Beyond consultancy, JB NewGen is building GTM Bridge: a curated marketplace community connecting global startups seeking India entry with vetted Indian channel partners, specialist agencies, and enterprise CIOs and CTOs actively evaluating new technologies.</p>
+      <div class="bridge-features">
+        <div class="bridge-feat">
+          <div class="bridge-dot"></div>
+          <p><strong>Global startups</strong> get matched with the right India partners and enterprise buyers for their category</p>
+        </div>
+        <div class="bridge-feat">
+          <div class="bridge-dot"></div>
+          <p><strong>India channel partners</strong> get access to qualified foreign startups looking for distribution</p>
+        </div>
+        <div class="bridge-feat">
+          <div class="bridge-dot"></div>
+          <p><strong>Enterprise CIOs & CTOs</strong> get curated access to global tech startups solving their category problems</p>
+        </div>
+        <div class="bridge-feat">
+          <div class="bridge-dot"></div>
+          <p><strong>Community events</strong> — virtual and in-person — connecting the India startup ecosystem globally</p>
+        </div>
+      </div>
+    </div>
+    <div class="bridge-cta">
+      <h3>Join the GTM Bridge founding community</h3>
+      <p>We're onboarding our first cohort of global startups and India partners. Founding members get priority matching, direct introductions from the JB NewGen team, and early access to community events.</p>
+      <a href="mailto:sales@jbnewgen.com?subject=GTM Bridge - Founding Member Interest" class="btn-orange">Express Interest →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="section-label" style="text-align:center;">Work With Us</div>
+    <h2>Ready to make India your next market?</h2>
+    <p>Book a free 45-minute India Entry Strategy call with our team. We'll be direct with you about the opportunity, the complexity, and exactly what it takes to build something real in India.</p>
+    <div class="cta-btns">
+      <a href="https://jbnewgen.com/get-a-quote-now/" class="btn-dark">Book Your Free Strategy Call →</a>
+      <a href="mailto:sales@jbnewgen.com" class="btn-outline">Email Us Directly</a>
+    </div>
+    <p style="margin-top:28px;font-size:14px;color:var(--text-light);">JB NewGen Enterprises Pvt. Ltd. · 504 Challenger Tower III, Kandivali (E), Mumbai 400 101 · sales@jbnewgen.com · +91 6362864230</p>
+  </div>
+</section>
+
+</body>
+</html>

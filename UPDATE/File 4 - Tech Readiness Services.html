@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>India Tech Readiness — Getting Your Product & Operations India-Ready | JB NewGen</title>
+<meta name="description" content="JB NewGen helps global startups assess, adapt, and launch India-ready tech infrastructure — from India-stack integration and UPI payments to data compliance and CRM setup." />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0B1B38; --navy-mid: #162B52; --orange: #E8540A; --orange-light: #FF6B1A;
+    --cream: #F9F6F0; --cream-dark: #EDE8DF; --text-body: #2C2C2A;
+    --text-muted: #5F5E5A; --text-light: #888780; --white: #FFFFFF;
+    --border: rgba(11,27,56,0.12);
+  }
+  body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.7; color: var(--text-body); background: var(--white); }
+  h1, h2, h3, h4 { font-family: 'Sora', sans-serif; font-weight: 700; line-height: 1.2; color: var(--navy); }
+
+  /* HERO */
+  .hero { background: var(--navy); padding: 100px 48px 80px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -120px; right: -120px; width: 480px; height: 480px; border-radius: 50%; background: var(--orange); opacity: 0.08; }
+  .hero::after { content: ''; position: absolute; bottom: -80px; left: 30%; width: 300px; height: 300px; border-radius: 50%; background: var(--orange); opacity: 0.05; }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge { display: inline-block; background: rgba(232,84,10,0.15); color: #FF8C4A; font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; border: 1px solid rgba(232,84,10,0.3); margin-bottom: 28px; }
+  .hero h1 { color: var(--white); font-size: clamp(32px, 5vw, 52px); margin-bottom: 20px; max-width: 720px; }
+  .hero h1 span { color: var(--orange-light); }
+  .hero p { color: rgba(255,255,255,0.72); font-size: 18px; font-weight: 300; max-width: 620px; line-height: 1.75; margin-bottom: 40px; }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary { background: var(--orange); color: var(--white); font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; padding: 14px 28px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
+  .btn-primary:hover { background: var(--orange-light); }
+  .btn-secondary { background: transparent; color: rgba(255,255,255,0.8); font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 500; padding: 14px 28px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.25); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s, color 0.2s; }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+
+  /* SHARED LAYOUT */
+  .section-label { font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; }
+  .section { padding: 88px 48px; }
+  .section-inner { max-width: 1000px; margin: 0 auto; }
+  .section-header { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 64px; align-items: end; }
+  .section-header h2 { font-size: clamp(26px, 3.5vw, 38px); }
+  .section-header p { color: var(--text-muted); font-size: 16px; line-height: 1.75; }
+  .bg-cream { background: var(--cream); }
+  .bg-navy { background: var(--navy); }
+  .bg-white { background: var(--white); }
+
+  /* PAIN GRID */
+  .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .pain-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; }
+  .pain-icon { width: 40px; height: 40px; background: rgba(232,84,10,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 18px; }
+  .pain-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 8px; color: var(--navy); }
+  .pain-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+  /* SERVICES */
+  .services { display: flex; flex-direction: column; gap: 0; }
+  .service-item { display: grid; grid-template-columns: 56px 1fr; gap: 0 28px; padding: 36px 0; border-top: 1px solid var(--border); }
+  .service-item:last-child { border-bottom: 1px solid var(--border); }
+  .service-num { font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; color: var(--orange); padding-top: 4px; }
+  .service-body h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; color: var(--navy); }
+  .service-body p { font-size: 15px; color: var(--text-muted); line-height: 1.75; max-width: 680px; margin-bottom: 16px; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-size: 12px; font-weight: 500; color: var(--navy-mid); background: var(--cream); border: 1px solid var(--border); padding: 4px 12px; border-radius: 100px; }
+
+  /* WHY GRID */
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .why-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 28px 24px; }
+  .why-card h4 { color: var(--white); font-size: 16px; margin-bottom: 10px; }
+  .why-card p { color: rgba(255,255,255,0.58); font-size: 14px; line-height: 1.7; }
+  .why-check { width: 28px; height: 28px; border-radius: 50%; background: rgba(232,84,10,0.2); border: 1px solid rgba(232,84,10,0.4); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 12px; color: #FF8C4A; }
+  .why h2 { color: var(--white); font-size: clamp(26px, 3.5vw, 38px); margin-bottom: 16px; }
+  .why > .section-inner > p { color: rgba(255,255,255,0.65); font-size: 17px; margin-bottom: 56px; max-width: 600px; }
+  .why .section-label { color: #FF8C4A; }
+
+  /* STAGE TABLE */
+  .stage-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  .stage-table tr { border-bottom: 1px solid var(--border); }
+  .stage-table td { padding: 24px 20px; vertical-align: top; font-size: 15px; }
+  .stage-table td:first-child { width: 160px; font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); background: var(--navy); border-radius: 0; font-size: 14px; }
+  .stage-table td:last-child { color: var(--text-muted); background: var(--cream); }
+
+  /* CTA */
+  .cta-section { background: var(--cream); padding: 88px 48px; text-align: center; }
+  .cta-inner { max-width: 640px; margin: 0 auto; }
+  .cta-section h2 { font-size: clamp(26px, 3.5vw, 38px); margin-bottom: 16px; }
+  .cta-section p { color: var(--text-muted); font-size: 17px; margin-bottom: 40px; }
+  .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-dark { background: var(--navy); color: var(--white); font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; padding: 16px 32px; border-radius: 8px; text-decoration: none; }
+  .btn-outline { background: transparent; color: var(--navy); font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 500; padding: 16px 32px; border-radius: 8px; border: 1.5px solid var(--navy); text-decoration: none; }
+
+  /* SEO BLOCK */
+  .seo-block { padding: 72px 48px; background: var(--white); border-top: 1px solid var(--border); }
+  .seo-inner { max-width: 780px; margin: 0 auto; }
+  .seo-inner h2 { font-size: 24px; margin-bottom: 16px; }
+  .seo-inner p { color: var(--text-muted); font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
+  .seo-inner ul { padding-left: 20px; color: var(--text-muted); font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
+
+  @media (max-width: 700px) {
+    .hero, .section, .cta-section, .seo-block { padding-left: 24px; padding-right: 24px; }
+    .section-header { grid-template-columns: 1fr; gap: 24px; }
+    .pain-grid, .why-grid { grid-template-columns: 1fr; }
+    .stage-table td:first-child { width: 100px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">India Tech Readiness — Service 02</div>
+    <h1>Getting your product & operations <span>India-ready</span></h1>
+    <p>Your product works perfectly in the US or Europe. India will test it differently. India is a mobile-first, WhatsApp-native, UPI-powered market — and your payment stack, CRM, data infrastructure, and compliance posture all need to be assessed and often adapted before you go live. We handle that India tech readiness layer so your launch isn't derailed by avoidable integration failures.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Book a Free Tech Readiness Call →</a>
+      <a href="#services" class="btn-secondary">See What We Do</a>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="section bg-cream">
+  <div class="section-inner">
+    <div class="section-label">The India Tech Challenge</div>
+    <h2 style="font-size:clamp(24px,3.5vw,36px);margin-bottom:16px;">What global startups consistently get wrong about India's tech environment</h2>
+    <p style="color:var(--text-muted);font-size:17px;max-width:640px;margin-bottom:48px;">India's digital infrastructure is not a smaller, slower version of the West. It is a parallel ecosystem with its own payment rails, identity systems, communication platforms, and regulatory mandates. Most global startups discover this after launch — which is exactly the wrong time.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">💳</div>
+        <h3>Your payment stack won't work as-is</h3>
+        <p>Stripe and PayPal have limited reach in India. UPI processes over 10 billion transactions a month. If you're not integrated with India's payment rails, you're invisible to a huge segment of buyers.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">⚖️</div>
+        <h3>Data localisation is a legal requirement</h3>
+        <p>India's DPDP Act and sector-specific RBI, IRDAI, and SEBI regulations require certain data categories to be stored within India. Launching without addressing this is a compliance risk from day one.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📱</div>
+        <h3>Device and network fragmentation is real</h3>
+        <p>India's users span flagship smartphones to entry-level Android devices, and 4G networks that drop to 2G in Tier 2 cities. Products not optimised for this range will underperform and churn.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🔁</div>
+        <h3>Your CRM is built for the wrong sales motion</h3>
+        <p>Indian B2B runs through distributors and resellers — not direct sales. A CRM configured for a direct sales motion will fail to track or manage India's channel-driven pipeline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section bg-white" id="services">
+  <div class="section-inner">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Our Services</div>
+        <h2>Five focused India tech readiness services — nothing generic</h2>
+      </div>
+      <p>We don't offer boilerplate digital transformation programmes. Every engagement is scoped to the specific India entry context of your product, your sector, and your go-live timeline.</p>
+    </div>
+    <div class="services">
+
+      <div class="service-item">
+        <div class="service-num">01</div>
+        <div class="service-body">
+          <h3>India Tech Stack Assessment</h3>
+          <p>Before committing budget to India, you need to know what works as-is and what needs to change. We audit your existing product and operational systems against India's infrastructure realities — network conditions, device fragmentation, payment rails, data localisation requirements, and regulatory mandates across your sector. You receive a clear readiness report with a prioritised action list: what to fix before launch, what to fix in the first 90 days, and what can wait. This is the foundation every other engagement builds on.</p>
+          <div class="service-tags">
+            <span class="tag">Payment rail audit</span><span class="tag">Compliance gap analysis</span><span class="tag">Device & network testing</span><span class="tag">Regulatory readiness</span><span class="tag">Prioritised action plan</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">02</div>
+        <div class="service-body">
+          <h3>India-Stack Integration</h3>
+          <p>India runs on its own digital infrastructure — UPI for payments, Aadhaar for identity verification, BBPS for bill payments, WhatsApp for commerce and support, and IndiaStack APIs for government-linked services. If your product doesn't connect natively to these, you're operating at a structural disadvantage against local competitors who do. We identify which India-stack components are relevant to your category, manage the technical integration, and test across the device and network range your Indian customers will actually use. The output is a product that feels native to how India transacts, communicates, and identifies itself.</p>
+          <div class="service-tags">
+            <span class="tag">UPI & payment gateway</span><span class="tag">WhatsApp Business API</span><span class="tag">Aadhaar & eKYC</span><span class="tag">BBPS integration</span><span class="tag">IndiaStack APIs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">03</div>
+        <div class="service-body">
+          <h3>CRM & Sales Operations Setup for India</h3>
+          <p>Your sales team in India needs a CRM configured for India's multi-tier sales motion — not the direct B2B model your global CRM is built for. India's channel-driven model requires tracking relationships across distributors, sub-distributors, resellers, and end customers simultaneously, with visibility at every tier. We implement and configure CRM systems for this structure — with partner pipeline tracking, distributor performance dashboards, multi-city lead routing, and reporting formats that give your global HQ the visibility they need without overwhelming your India team.</p>
+          <div class="service-tags">
+            <span class="tag">Channel pipeline config</span><span class="tag">Distributor tracking</span><span class="tag">Multi-city lead routing</span><span class="tag">Partner dashboards</span><span class="tag">HQ reporting</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">04</div>
+        <div class="service-body">
+          <h3>Cloud & Data Compliance for India</h3>
+          <p>India's data protection landscape is evolving rapidly. The Digital Personal Data Protection (DPDP) Act, combined with sector-specific mandates from the RBI, IRDAI, SEBI, and MeitY, means that many global startups face mandatory data localisation, consent framework requirements, and breach notification obligations before they can legally onboard Indian customers. We assess your specific compliance exposure based on your product category and customer type, guide your cloud architecture decisions, and build the documentation and consent frameworks that regulators and enterprise customers in India will ask for. This is a legal and operational prerequisite — not optional.</p>
+          <div class="service-tags">
+            <span class="tag">DPDP Act compliance</span><span class="tag">RBI / IRDAI / SEBI</span><span class="tag">India cloud architecture</span><span class="tag">Data localisation</span><span class="tag">Consent frameworks</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">05</div>
+        <div class="service-body">
+          <h3>Process Automation for India Operations</h3>
+          <p>As your India operation scales from 0 to 100 channel partners and 1,000 customers, manual processes that worked at the start become the biggest bottleneck to growth. We implement automation for the operational workflows that matter most in an India context: partner onboarding and KYC, GST-compliant invoicing and reconciliation, distributor order management, customer support routing across WhatsApp and email, and performance reporting. We also set up real-time dashboards that give your global headquarters visibility into India pipeline, revenue, and partner performance — because your board will ask, and the answer needs to be instant.</p>
+          <div class="service-tags">
+            <span class="tag">Partner onboarding automation</span><span class="tag">GST-compliant invoicing</span><span class="tag">Order management</span><span class="tag">Support routing</span><span class="tag">HQ performance dashboards</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY JB NEWGEN -->
+<section class="section bg-navy why">
+  <div class="section-inner">
+    <div class="section-label">Why JB NewGen</div>
+    <h2>India tech expertise — not generic digital transformation</h2>
+    <p>Most digital transformation firms give you a framework. We give you an India-specific implementation. The difference matters enormously when the regulation is the RBI, the payment rail is UPI, and the device your customer is using is a Redmi 9.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-check">✓</div>
+        <h4>India-first, not India-adapted</h4>
+        <p>We don't adapt Western frameworks for India. We start from India's actual infrastructure, regulatory environment, and user behaviour — then build toward your product.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-check">✓</div>
+        <h4>Regulatory knowledge built in</h4>
+        <p>Our assessments cover the DPDP Act, RBI guidelines, sector-specific mandates, and DLT registration — as a core deliverable, not an afterthought.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-check">✓</div>
+        <h4>Cross-functional delivery</h4>
+        <p>Tech readiness touches product, legal, ops, and sales. We coordinate across all of them so nothing falls through the gap between your CTO and your India ops lead.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-check">✓</div>
+        <h4>Ongoing India support</h4>
+        <p>We don't disappear after delivery. As India's regulatory environment evolves and your product scales, we stay on as your India tech advisory resource.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="section bg-cream">
+  <div class="section-inner">
+    <div class="section-label">Who This Is For</div>
+    <h2 style="font-size:clamp(24px,3.5vw,36px);margin-bottom:12px;">Built for global startups at every stage of India readiness</h2>
+    <p style="color:var(--text-muted);font-size:16px;margin-bottom:40px;max-width:560px;">Whether you're planning entry, going live, or already operating and hitting friction — we have an engagement model for your stage.</p>
+    <table class="stage-table">
+      <tr>
+        <td>Pre-launch</td>
+        <td>You're planning India entry in the next 6 months and want to know what you need to fix before you go live. Start with the Tech Stack Assessment — no charge, no commitment.</td>
+      </tr>
+      <tr>
+        <td>At launch</td>
+        <td>You're going live in India and need India-stack integrations, compliant cloud infrastructure, and a CRM configured for Indian channel sales. We deliver in parallel with your GTM motion.</td>
+      </tr>
+      <tr>
+        <td>Post-launch</td>
+        <td>You're already operating in India but hitting friction — payment failures, compliance questions, CRM blind spots, or HQ visibility gaps. We diagnose and fix.</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="section-label" style="text-align:center;">Get Started</div>
+    <h2>Is your product ready for India?</h2>
+    <p>Book a free 45-minute India Tech Readiness call. We'll tell you honestly what needs to change before you launch — and what can wait.</p>
+    <div class="cta-btns">
+      <a href="https://jbnewgen.com/get-a-quote-now/" class="btn-dark">Book Your Free Readiness Call →</a>
+      <a href="mailto:sales@jbnewgen.com" class="btn-outline">Email Us Directly</a>
+    </div>
+    <p style="margin-top:28px;font-size:14px;color:var(--text-light);">JB NewGen Enterprises · Mumbai, India · sales@jbnewgen.com · +91 6362864230</p>
+  </div>
+</section>
+
+<!-- SEO BLOCK -->
+<section class="seo-block">
+  <div class="seo-inner">
+    <h2>India Tech Readiness for Global Startups — What You Need to Know</h2>
+    <p>India's digital ecosystem is genuinely different from Western markets — not just in scale, but in architecture. UPI, Aadhaar, BBPS, and the WhatsApp communication layer form an India-specific digital stack that your product must integrate with to operate effectively. At JB NewGen, we specialise in helping US, EU, and global startups make this transition efficiently and compliantly.</p>
+    <p>Our India Tech Readiness services cover five critical areas for global startups entering India:</p>
+    <ul>
+      <li>India tech stack assessment and gap analysis</li>
+      <li>UPI, WhatsApp, Aadhaar, and IndiaStack integration</li>
+      <li>CRM and sales operations setup for India's channel-driven model</li>
+      <li>Cloud architecture and DPDP Act / RBI / IRDAI compliance</li>
+      <li>Process automation for India-scale operations</li>
+    </ul>
+    <p>Whether you're a SaaS startup preparing for enterprise sales in India, a D2C brand integrating with Indian e-commerce and payment infrastructure, or a fintech navigating RBI compliance — JB NewGen provides the India-specific technical expertise to get you live faster and compliant from day one.</p>
+    <p><strong>Based in Mumbai. Delivering India tech readiness for global startups across every sector.</strong></p>
+  </div>
+</section>
+
+</body>
+</html>
