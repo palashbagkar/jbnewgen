@@ -28,10 +28,8 @@ export type NavLink = { label: string; href: string; desc?: string };
 /* -------------------------------------------------------------------------- */
 
 export const aboutChildren: NavLink[] = [
-  { label: "Overview", href: "/about", desc: "Who we are, at a glance" },
   { label: "The Company", href: "/about/company", desc: "JB NewGen Enterprises" },
   { label: "Our CEO", href: "/about/ceo", desc: "Joyjeet Bose · 35+ years" },
-  { label: "Core Team", href: "/about/team", desc: "The people behind your India entry" },
 ];
 
 /* -------------------------------------------------------------------------- */
@@ -44,6 +42,8 @@ export type Pillar = {
   title: string;
   short: string;
   blurb: string;
+  /** One-paragraph intro shown beside the pillar visual on the homepage. */
+  subtext: string;
   icon: string;
   services: Service[];
 };
@@ -54,57 +54,65 @@ export const pillars: Pillar[] = [
     title: "Business Consultancy — Your India GTM Partner",
     short: "Business Consultancy",
     blurb: "From strategy to on-ground execution.",
+    subtext:
+      "We help US, EU, and global startups go from “we want to enter India” to “we are operating in India” — in months, not years. On-ground expertise. Real networks. End-to-end accountability.",
     icon: "compass",
     services: [
-      { slug: "go-to-market", title: "Go-To-Market Strategy" },
+      { slug: "go-to-market", title: "Go-to-Market Strategy" },
       { slug: "channel-distribution", title: "Channel & Distribution Network" },
-      { slug: "process-policies", title: "Process & Policies – India-Ready Ops" },
-      { slug: "expert-advisory", title: "Expert Advisory – India Specialists" },
+      { slug: "process-policies", title: "Process & Policies – for ready Operations" },
       { slug: "partner-engagement", title: "Partner Engagement" },
-      { slug: "launch-execution", title: "Launch Execution" },
+      { slug: "end-to-end-execution", title: "End to End Execution" },
       { slug: "training", title: "Training – Sales & Leadership" },
     ],
   },
   {
     slug: "tech-readiness",
-    title: "India Tech Readiness Services",
-    short: "India Tech Readiness",
+    title: "Tech Readiness Services",
+    short: "Tech Readiness",
     blurb: "Startup-ready digital infrastructure.",
+    subtext:
+      "Your product works perfectly in the US or Europe. India will test it differently. India is a mobile-first, WhatsApp-native, UPI-powered market — and your payment stack, CRM, data infrastructure, and compliance posture all need to be assessed and often adapted before you go live. We handle that India tech readiness layer so your launch isn’t derailed by avoidable integration failures.",
     icon: "cpu",
     services: [
       { slug: "tech-stack-assessment", title: "Tech Stack Assessment & Integration" },
-      { slug: "cloud-data-compliance", title: "Cloud & Data Compliance" },
-      { slug: "process-automation", title: "Process Automation for India Ops" },
-      { slug: "data-analytics", title: "Data Analytics" },
+      { slug: "cloud-hosting-data", title: "Cloud, Hosting & Data Solutions" },
+      { slug: "telecom-connectivity", title: "Telecom & Connectivity Solutions" },
+      { slug: "cyber-security", title: "Cyber Security Product & Solutions" },
+      { slug: "process-automation", title: "Process Automation for Operations" },
       { slug: "crm-sales-ops", title: "CRM & Sales Operations Setup" },
     ],
   },
   {
     slug: "digital-marketing",
-    title: "Building Visibility & Demand in India",
+    title: "Building Visibility & Demand in India's Digital Market",
     short: "Visibility & Demand",
     blurb: "Amplify your brand and pipeline.",
+    subtext:
+      "India’s digital audience is 900 million strong — and they don’t behave like your existing customers. They discover brands on YouTube before Google. They transact on WhatsApp before your website. They trust regional-language content more than English. Getting India digital marketing right means understanding these differences and building campaigns that work with them, not against them.",
     icon: "megaphone",
     services: [
       { slug: "seo", title: "SEO & Search Presence" },
       { slug: "social-media", title: "Social Media & Brand Building" },
       { slug: "google-ads", title: "Google Ads for India" },
-      { slug: "performance-marketing", title: "Performance Marketing & Lead Gen" },
+      { slug: "performance-marketing", title: "Performance Marketing & Lead Generation" },
       { slug: "youtube-video", title: "YouTube & Video Marketing" },
       { slug: "whatsapp-email", title: "WhatsApp & Email Marketing" },
     ],
   },
   {
     slug: "cpaas-omnichannel",
-    title: "CPaaS & Omnichannel Communication",
-    short: "CPaaS & Omnichannel",
+    title: "Customer Communication Services",
+    short: "Customer Communication",
     blurb: "Unified customer communication at scale.",
+    subtext:
+      "In India, your customers are not waiting in your inbox. They’re on WhatsApp. India’s communication behaviour is fundamentally different from Western markets — customers expect WhatsApp updates, partners expect SMS confirmations, and enterprise buyers expect voice-first relationships. If your communication stack is built for Western behaviour, you will lose Indian customers at every touchpoint — not because your product is wrong, but because your channel is.",
     icon: "chat",
     services: [
       { slug: "whatsapp-business-api", title: "WhatsApp Business API" },
-      { slug: "sms-rcs", title: "SMS & RCS – India-optimised" },
-      { slug: "voice-contact-centre", title: "Voice & Contact Centre" },
-      { slug: "omnichannel-dashboard", title: "Omnichannel Dashboard & Analytics" },
+      { slug: "sms-rcs", title: "SMS & RCS: Compliant, Reliable, India-Optimised" },
+      { slug: "voice-contact-centre", title: "Voice & Contact Centre Solutions" },
+      { slug: "omnichannel-dashboard", title: "Omnichannel Dashboard & Unified Communication Analytics" },
     ],
   },
 ];
@@ -289,10 +297,8 @@ export type PageEntry = { href: string; title: string; group: string };
 export function allPages(): PageEntry[] {
   const list: PageEntry[] = [
     { href: "/", title: "Home", group: "Main" },
-    { href: "/about", title: "About — Overview", group: "About" },
     { href: "/about/company", title: "The Company", group: "About" },
     { href: "/about/ceo", title: "Our CEO — Joyjeet Bose", group: "About" },
-    { href: "/about/team", title: "Core Team", group: "About" },
     { href: "/services", title: "Services — Overview", group: "Services" },
     { href: "/careers", title: "Careers", group: "Main" },
     { href: "/contact", title: "Contact", group: "Main" },
