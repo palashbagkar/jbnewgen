@@ -2,7 +2,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { CountUpStat } from "./CountUpStat";
 import { proofStats } from "@/lib/content";
 
-/** Credibility bar — the numbers that answer "can they actually do this?" */
+/** Credibility bar - the numbers that answer "can they actually do this?" */
 export function ProofBar() {
   return (
     <section className="border-y border-ink-100 bg-ink-50/50">

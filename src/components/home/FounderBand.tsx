@@ -3,7 +3,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { ceo } from "@/lib/content";
 
-/** Person-led credibility — "About", done right. */
+/** Person-led credibility - "About", done right. */
 export function FounderBand() {
   const chips = [
     "Channel & distribution architecture",
@@ -17,7 +17,7 @@ export function FounderBand() {
           variant="pop"
           className="relative overflow-hidden rounded-3xl border border-ink-100 bg-white shadow-[0_20px_60px_-40px_rgba(8,21,39,0.5)]"
         >
-          {/* Photo — a direct, unpadded child so it sits flush in the card's bottom-right corner. */}
+          {/* Photo - a direct, unpadded child so it sits flush in the card's bottom-right corner. */}
           <div className="absolute bottom-0 right-0 h-40 w-36 overflow-hidden rounded-tl-2xl shadow-lg">
             <Image src="/images/clients/ceo.png" alt={ceo.name} fill sizes="144px" className="object-cover object-top" />
           </div>

@@ -4,7 +4,7 @@ import type { IconName } from "@/components/ui/Icon";
 
 type Action = { label: string; href: string; icon?: IconName; variant?: "primary" | "light" | "secondary" };
 
-/** Persistent conversion rail — the "next step" present at the foot of every page. */
+/** Persistent conversion rail - the "next step" present at the foot of every page. */
 export function NextStep({
   heading = "No page is a dead end.",
   actions = [

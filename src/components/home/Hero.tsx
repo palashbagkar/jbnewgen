@@ -29,7 +29,7 @@ export function Hero() {
         }}
       />
 
-      {/* Content — aligned to the header container so the left edge meets the logo */}
+      {/* Content - aligned to the header container so the left edge meets the logo */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 py-28 sm:px-8">
         <div className="max-w-2xl">
           <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight text-white [text-shadow:0_1px_20px_rgba(0,0,0,0.45)] sm:text-5xl md:text-[3.7rem]">

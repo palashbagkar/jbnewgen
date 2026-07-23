@@ -5,8 +5,8 @@ import { cn } from "@/lib/cn";
 
 type Variant = "slide" | "pop";
 
-// slide: default for general components — blurred, moves in from the left.
-// pop:   buttons/containers — blurred, rises in from the bottom.
+// slide: default for general components - blurred, moves in from the left.
+// pop:   buttons/containers - blurred, rises in from the bottom.
 const hidden: Record<Variant, string> = {
   slide: "opacity-0 -translate-x-10 blur-md",
   pop: "opacity-0 translate-y-6 blur-md",

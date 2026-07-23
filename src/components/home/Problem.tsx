@@ -4,7 +4,7 @@ import { SplitHeading } from "@/components/ui/SplitHeading";
 import { Icon } from "@/components/ui/Icon";
 import { ceo } from "@/lib/content";
 
-/** Frames the need — India's complexity — and lands the CEO's signature quote. */
+/** Frames the need - India's complexity - and lands the CEO's signature quote. */
 export function Problem() {
   return (
     <section className="relative overflow-hidden py-20 sm:py-28">
@@ -25,7 +25,7 @@ export function Problem() {
           <figure className="relative overflow-hidden rounded-3xl bg-ink-950 text-white shadow-[0_40px_80px_-44px_rgba(8,21,39,0.6)]">
             <div className="pointer-events-none absolute inset-0 mesh rounded-3xl opacity-60" />
 
-            {/* Photo — a direct, unpadded child so it sits flush in the card's bottom-right corner. */}
+            {/* Photo - a direct, unpadded child so it sits flush in the card's bottom-right corner. */}
             <div className="absolute bottom-0 right-0 h-28 w-24 overflow-hidden rounded-tl-2xl">
               <Image src="/images/clients/ceo.png" alt={ceo.name} fill sizes="96px" className="object-cover object-top" />
             </div>

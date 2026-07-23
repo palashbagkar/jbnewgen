@@ -53,7 +53,7 @@ export function ServicesShowcase() {
           </SplitHeading>
           <Reveal delay={250}>
             <p className="mt-5 text-pretty text-lg text-ink-300">
-              End to end — from strategy to the technology and communication that runs your operation
+              End to end - from strategy to the technology and communication that runs your operation
               on the ground.
             </p>
           </Reveal>
@@ -63,7 +63,7 @@ export function ServicesShowcase() {
           {/* Both columns live in one centered block: a 60 / 40 split, equal height,
               contents stuck to the top. */}
           <div className="mx-auto grid max-w-4xl items-stretch gap-6 lg:grid-cols-[1.2fr_1fr] lg:gap-10">
-            {/* Column 1 (60%) — the live visual, with the explore/timer button beneath it. */}
+            {/* Column 1 (60%) - the live visual, with the explore/timer button beneath it. */}
             <Reveal as="div" variant="pop" delay={150} className="flex flex-col gap-5">
               <div
                 key={`${pillar.slug}-visual`}
@@ -99,7 +99,7 @@ export function ServicesShowcase() {
               </Link>
             </Reveal>
 
-            {/* Column 2 (40%) — title + service pills share one width and sit centered
+            {/* Column 2 (40%) - title + service pills share one width and sit centered
                 in the cell; the title wraps to that width so it lines up with the pills. */}
             <Reveal as="div" variant="pop" delay={220} className="flex flex-col">
               <div

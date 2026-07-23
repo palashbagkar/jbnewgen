@@ -32,7 +32,7 @@ function Screen({ label, children }: { label: string; children: React.ReactNode 
   );
 }
 
-/* 1 · Business Consultancy — channel reach across India's tiers (illustrative bars) */
+/* 1 · Business Consultancy - channel reach across India's tiers (illustrative bars) */
 function ReachVisual() {
   const on = useReveal();
   const rows = [
@@ -75,7 +75,7 @@ function ReachVisual() {
   );
 }
 
-/* 2 · Tech Readiness — India Stack Integration Gateway */
+/* 2 · Tech Readiness - India Stack Integration Gateway */
 function TopologyVisual() {
   const on = useReveal();
   const gateways = [
@@ -138,7 +138,7 @@ function TopologyVisual() {
   );
 }
 
-/* 3 · Visibility & Demand — illustrative growth curve (no data claims) */
+/* 3 · Visibility & Demand - illustrative growth curve (no data claims) */
 function DemandVisual() {
   const on = useReveal();
   const pts = [8, 20, 16, 32, 44, 40, 58, 76, 92];
@@ -199,7 +199,7 @@ function DemandVisual() {
   );
 }
 
-/* 4 · CPaaS & Omnichannel — channels converging into one inbox */
+/* 4 · CPaaS & Omnichannel - channels converging into one inbox */
 function OmnichannelVisual() {
   const on = useReveal();
   const channels: { label: string; icon: IconName; tint: string; ring: string; dot: string }[] = [

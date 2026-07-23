@@ -4,7 +4,7 @@ import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { Logo } from "./Logo";
 
-/** Footer doubles as a complete sitemap — every cluster reachable from any page. */
+/** Footer doubles as a complete sitemap - every cluster reachable from any page. */
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -47,7 +47,7 @@ export function Footer() {
           <Reveal variant="pop">
             <Logo light withTagline />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-ink-300">
-              Your India Go-To-Market partner. This footer is a full sitemap — every page is one
+              Your India Go-To-Market partner. This footer is a full sitemap - every page is one
               click away.
             </p>
             <div className="mt-6 flex flex-col gap-2 text-sm">

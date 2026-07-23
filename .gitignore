@@ -42,3 +42,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# graphify skill artifacts
+graphify-out/
+src/graphify-out/
+
+# payload local media uploads (dev only; prod uses Vercel Blob)
+/media

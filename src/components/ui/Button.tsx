@@ -9,7 +9,7 @@ type Size = "sm" | "md" | "lg";
 const base =
   "group inline-flex items-center justify-center gap-2 rounded-[7px] font-semibold focus-visible:outline-none disabled:opacity-60 disabled:pointer-events-none whitespace-nowrap";
 
-// Full treatment — glow + hover lift.
+// Full treatment - glow + hover lift.
 const variants: Record<Variant, string> = {
   primary:
     "transition-all duration-200 bg-flame-500 text-white shadow-[0_10px_30px_-10px_rgba(247,148,29,0.7)] hover:bg-flame-600 hover:shadow-[0_14px_34px_-8px_rgba(247,148,29,0.7)] hover:-translate-y-0.5",
@@ -21,7 +21,7 @@ const variants: Record<Variant, string> = {
     "transition-all duration-200 bg-white/10 text-white ring-1 ring-inset ring-white/25 backdrop-blur hover:bg-white/20",
 };
 
-// Flat treatment — no glow, no motion. Just a plain colour change on hover.
+// Flat treatment - no glow, no motion. Just a plain colour change on hover.
 const flatVariants: Record<Variant, string> = {
   primary: "transition-colors duration-200 bg-flame-500 text-white hover:bg-flame-600",
   secondary: "transition-colors duration-200 bg-ink-900 text-white hover:bg-ink-800",

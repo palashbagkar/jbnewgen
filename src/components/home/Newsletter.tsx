@@ -13,7 +13,7 @@ export function Newsletter() {
               India market insights, once a month
             </SplitHeading>
             <p className="mt-2 text-ink-500">
-              Sharp, practical notes for operators — no fluff, no spam. Unsubscribe anytime.
+              Sharp, practical notes for operators - no fluff, no spam. Unsubscribe anytime.
             </p>
           </div>
           <form className="flex w-full max-w-md flex-col gap-3 sm:flex-row" aria-label="Newsletter signup">
