@@ -37,7 +37,8 @@ export async function POST(req: Request) {
     },
   })
 
-  const to = (process.env.TWOFA_TO || 'palashbagkar18@gmail.com')
+  const notifyEmail = (user as { notifyEmail?: string; email?: string }).notifyEmail
+  const to = (notifyEmail || process.env.TWOFA_TO || 'palashbagkar18@gmail.com')
     .split(',')
     .map((s) => s.trim())
     .filter(Boolean)

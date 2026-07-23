@@ -11,6 +11,12 @@ export const Users: CollectionConfig = {
   admin: { useAsTitle: 'email' },
   fields: [
     { name: 'name', type: 'text' },
+    {
+      name: 'notifyEmail',
+      type: 'email',
+      label: '2FA delivery email',
+      admin: { description: 'Where the login OTP code is actually sent. Leave blank to use the login email above.' },
+    },
     // Email-OTP 2FA state. Use admin.hidden (UI-only) — plain `hidden: true`
     // strips fields from API/local reads too, which broke verify.
     { name: 'otpHash', type: 'text', admin: { hidden: true } },
