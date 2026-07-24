@@ -4,9 +4,11 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { SplitHeading } from "@/components/ui/SplitHeading";
 import { Button } from "@/components/ui/Button";
-import { Icon, type IconName } from "@/components/ui/Icon";
+import { Icon } from "@/components/ui/Icon";
 import { NavGrid } from "@/components/nav/NavGrid";
 import { site } from "@/lib/content";
+import { getJobs } from "@/lib/jobs-data";
+import { getSiteSettings } from "@/lib/site-settings";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -14,66 +16,18 @@ export const metadata: Metadata = {
     "Join JB NewGen Enterprises. Explore our current job openings across partner sales, sales support, training, and digital marketing - and apply in just a few clicks with Quick Apply.",
 };
 
-/* Content is from the live jbnewgen.com/careers page - do not invent roles or copy. */
-
-const heroIntro =
-  "Looking to join JB NewGen? Now it's easier than ever. With Quick Apply, you can explore our 5 current job openings and apply to all relevant positions in just a few clicks.";
-
-type Role = {
-  title: string;
-  locations: string;
-  type: string;
-  icon: IconName;
-  body: string;
-};
-
-const roles: Role[] = [
-  {
-    title: "Partner Sales Manager",
-    locations: "Bangalore · Chennai · Hyderabad · Mumbai · DNCR · Kolkata",
-    type: "Remote",
-    icon: "handshake",
-    body: "Work with channel partners to drive sales of CCaaS, CPaaS, cloud and security solutions - building partner relationships, providing training support, and equipping partners with the sales tools they need.",
-  },
-  {
-    title: "Sales Support",
-    locations: "Bangalore",
-    type: "Remote",
-    icon: "folder",
-    body: "Provide administrative and operational support to the Sales and Partner teams - documentation, business process management, partner payouts, grievance resolution, and MIS report maintenance.",
-  },
-  {
-    title: "Trainer & Technical Support Specialist",
-    locations: "Bangalore",
-    type: "Remote",
-    icon: "bulb",
-    body: "Deliver continuous product training on CCaaS, CPaaS, and cloud services, and act as the technical support contact for partner sales teams - measured by deals closed independently.",
-  },
-  {
-    title: "Website Creation, SEO & Performance Marketing",
-    locations: "Bangalore / Mumbai",
-    type: "Remote",
-    icon: "trending",
-    body: "Own the creation, maintenance, SEO management, and performance marketing for our website - driving traffic and conversions while maintaining an optimal user experience.",
-  },
-  {
-    title: "Digital Marketing Specialist – Social Media Engagement",
-    locations: "Bangalore / Mumbai",
-    type: "Remote",
-    icon: "megaphone",
-    body: "Create compelling content for company and leadership social profiles across LinkedIn, Facebook, Instagram, and Twitter to increase engagement and position leaders in their field.",
-  },
-];
+/* Roles and page copy come from the CMS (Job Openings + Site Settings); the
+   fallbacks in src/lib/content.ts are the live jbnewgen.com/careers content. */
 
 const applyHref = (role?: string) =>
   `mailto:${site.emails.support}?subject=${encodeURIComponent(
     role ? `Careers - Application: ${role}` : "Careers - Quick Apply",
   )}`;
 
-const address =
-  "JB NewGen Enterprises Pvt. Ltd. · 504 Challenger Tower III, Thakur Village, Kandivali (E), Mumbai 400 101 · support@jbnewgen.com · +91 6362864230";
+export default async function CareersPage() {
+  const [roles, settings] = await Promise.all([getJobs(), getSiteSettings()]);
+  const { intro: heroIntro, rolesEyebrow, rolesTitle, rolesIntro, address } = settings.careers;
 
-export default function CareersPage() {
   return (
     <>
       {/* HERO */}
@@ -121,9 +75,9 @@ export default function CareersPage() {
       <Section id="roles" className="bg-white">
         <SectionHeading
           align="left"
-          eyebrow="Open Roles"
-          title="5 current openings"
-          intro="Every role below is remote-friendly across our India footprint. Apply to all relevant positions in just a few clicks."
+          eyebrow={rolesEyebrow}
+          title={rolesTitle}
+          intro={rolesIntro}
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {roles.map((r, i) => (

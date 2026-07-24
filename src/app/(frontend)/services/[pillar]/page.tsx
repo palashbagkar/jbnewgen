@@ -7,11 +7,7 @@ import { WhyGrid } from "@/components/services/WhyGrid";
 import { FeatureGrid } from "@/components/services/FeatureGrid";
 import { StepTimeline } from "@/components/services/StepTimeline";
 import { ServiceCTA } from "@/components/services/ServiceCTA";
-import { pillarBySlug, pillars } from "@/lib/content";
-
-export function generateStaticParams() {
-  return pillars.map((p) => ({ pillar: p.slug }));
-}
+import { getPillarBySlug } from "@/lib/services-data";
 
 export async function generateMetadata({
   params,
@@ -19,7 +15,7 @@ export async function generateMetadata({
   params: Promise<{ pillar: string }>;
 }): Promise<Metadata> {
   const { pillar } = await params;
-  const p = pillarBySlug(pillar);
+  const p = await getPillarBySlug(pillar);
   return { title: p ? `${p.short} · Services` : "Services" };
 }
 
@@ -29,17 +25,17 @@ export default async function PillarPage({
   params: Promise<{ pillar: string }>;
 }) {
   const { pillar } = await params;
-  const p = pillarBySlug(pillar);
+  const p = await getPillarBySlug(pillar);
   if (!p) notFound();
 
-  const whyBlock = <WhyGrid {...p.why} />;
+  const whyBlock = p.why ? <WhyGrid {...p.why} /> : null;
   const featureBlocks = p.features?.map((f) => <FeatureGrid key={f.title} {...f} />);
   const whyBeforeFeatures = p.whyBeforeFeatures ?? true;
 
   return (
     <>
       <ServiceHero {...p.hero} />
-      <ChallengeGrid {...p.challenge} />
+      {p.challenge && <ChallengeGrid {...p.challenge} />}
       <ServiceList pillar={p} />
 
       {whyBeforeFeatures ? (
@@ -56,7 +52,7 @@ export default async function PillarPage({
 
       {p.steps && <StepTimeline {...p.steps} />}
 
-      <ServiceCTA {...p.cta} />
+      {p.cta && <ServiceCTA {...p.cta} />}
     </>
   );
 }

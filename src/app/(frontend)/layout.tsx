@@ -3,6 +3,8 @@ import { Inter, Space_Grotesk, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { getNavPillars } from "@/lib/services-data";
+import { getSiteSettings } from "@/lib/site-settings";
 const SITE_DESCRIPTION =
   "35 years, 7,000+ channel partners and 30,000+ retail touchpoints. JBNewGen puts India's deepest distribution network to work - for global brands entering India, and for customer communication & cloud across India.";
 
@@ -58,18 +60,34 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+// The header nav, footer sitemap and brand mark are all CMS-driven, so every
+// page below this layout renders per request — otherwise an edit in /admin
+// would not appear until the next deploy.
+export const dynamic = "force-dynamic";
+
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  // Navigation and brand mark are CMS-driven; both fall back to the static
+  // content when the database is empty or unreachable.
+  const [pillars, settings] = await Promise.all([getNavPillars(), getSiteSettings()]);
+  const brand = {
+    logoUrl: settings.logoUrl,
+    logoAlt: settings.logoAlt,
+    brandPrefix: settings.brandPrefix,
+    brandSuffix: settings.brandSuffix,
+    tagline: settings.tagline,
+  };
+
   return (
     <html
       lang="en"
       className={`${inter.variable} ${display.variable} ${serif.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-white">
-        <Header />
+        <Header pillars={pillars} brand={brand} />
         <main className="flex-1">{children}</main>
-        <Footer />
+        <Footer pillars={pillars} brand={brand} />
       </body>
     </html>
   );

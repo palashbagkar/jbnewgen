@@ -3,11 +3,13 @@ import { PageHeader } from "@/components/nav/PageHeader";
 import { NavGrid } from "@/components/nav/NavGrid";
 import { NextStep } from "@/components/nav/NextStep";
 import { Button } from "@/components/ui/Button";
-import { pillars, site } from "@/lib/content";
+import { site } from "@/lib/content";
+import { getNavPillars } from "@/lib/services-data";
 
 export const metadata: Metadata = { title: "Get a Quote" };
 
-export default function QuotePage() {
+export default async function QuotePage() {
+  const pillars = await getNavPillars();
   return (
     <>
       <PageHeader

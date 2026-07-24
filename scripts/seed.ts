@@ -1,10 +1,15 @@
 /**
- * One-off seed: initialise the DB schema, create the first admin user, and the
- * three insight categories. Idempotent — safe to re-run.
+ * One-off seed: initialise the DB schema, create the first admin user and the
+ * insight categories, then load the existing site content (service categories,
+ * services, job openings, site settings) into the CMS via seedSiteContent so
+ * every field is editable from /admin. Idempotent — safe to re-run; existing
+ * docs are left untouched so editor changes are never overwritten.
+ *
  * Run with:  npx payload run scripts/seed.ts
  */
 import { getPayload } from 'payload'
 import config from '../src/payload.config'
+import { seedSiteContent } from '../src/lib/seed-content'
 
 const CATEGORIES = [
   { slug: 'business-strategy', title: 'Business & Strategy' },
@@ -44,6 +49,8 @@ const run = async () => {
       console.log(`• category exists: ${c.title}`)
     }
   }
+
+  for (const line of await seedSiteContent(payload)) console.log(line)
 
   console.log('Seed complete.')
   process.exit(0)

@@ -1,0 +1,26 @@
+/** Icon names available to editors — must stay a subset of the registry in
+ *  src/components/ui/Icon.tsx (unknown names fall back to the "spark" glyph). */
+export const ICON_OPTIONS = [
+  'compass',
+  'cpu',
+  'megaphone',
+  'chat',
+  'route',
+  'network',
+  'target',
+  'shield',
+  'bulb',
+  'spark',
+  'handshake',
+  'creditCard',
+  'folder',
+  'phone',
+  'mail',
+  'mapPin',
+  'clock',
+  'users',
+  'briefcase',
+  'globe',
+  'trending',
+  'gauge',
+].map((value) => ({ label: value, value }))

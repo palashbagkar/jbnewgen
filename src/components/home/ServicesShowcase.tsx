@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { pillars } from "@/lib/content";
+import type { NavPillar } from "@/lib/content";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { SplitHeading } from "@/components/ui/SplitHeading";
@@ -10,18 +10,19 @@ import { PillarVisual } from "./PillarVisual";
 
 const AUTO_MS = 6000;
 
-/** Interactive, executive product-demo of the four service pillars. */
-export function ServicesShowcase() {
+/** Interactive, executive product-demo of the service pillars.
+ *  `pillars` is resolved from the CMS by the page and passed in. */
+export function ServicesShowcase({ pillars }: { pillars: NavPillar[] }) {
   const [active, setActive] = useState(0);
   const [progress, setProgress] = useState(0); // 0–100, single source of truth
   const [paused, setPaused] = useState(false);
   const progressRef = useRef(0);
-  const pillar = pillars[active];
+  const pillar = pillars[active % Math.max(pillars.length, 1)];
 
   // One rAF loop drives both the visible bar and the advance, so they can never
   // drift apart. Pausing freezes the bar exactly where it is; resuming continues.
   useEffect(() => {
-    if (paused) return;
+    if (paused || pillars.length === 0) return;
     let raf = 0;
     let last = performance.now();
     const tick = (now: number) => {
@@ -38,7 +39,9 @@ export function ServicesShowcase() {
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [paused]);
+  }, [paused, pillars.length]);
+
+  if (!pillar) return null;
 
   return (
     <section className="relative overflow-hidden bg-ink-950 py-20 text-white sm:py-28">

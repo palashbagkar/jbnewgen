@@ -4,16 +4,18 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
-import { nav, pillars } from "@/lib/content";
+import { nav, type NavPillar } from "@/lib/content";
 import { Icon } from "@/components/ui/Icon";
-import { Logo } from "./Logo";
+import { Logo, type LogoBrand } from "./Logo";
 
 const HERO_MAX_BLUR_PX = 12;
 const HERO_HEADER_PX = 64;
 const HERO_REVEAL_START = 0.8;
 const HERO_DARK_RGB = "21, 25, 37";
 
-export function Header() {
+/** `pillars` and `brand` are resolved from the CMS in the root layout and
+ *  passed down, since this is a client component. */
+export function Header({ pillars, brand }: { pillars: NavPillar[]; brand?: LogoBrand }) {
   const pathname = usePathname();
   const router = useRouter();
   const isHome = pathname === "/";
@@ -190,7 +192,7 @@ export function Header() {
         {/* Main Header Container */}
         <div className="relative z-10 mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 py-2 sm:px-8">
           <Link href="/" aria-label="JBNewGen home" className="shrink-0">
-            <Logo light={clear} />
+            <Logo light={clear} {...brand} />
           </Link>
 
           {/* Desktop nav */}
@@ -246,13 +248,18 @@ export function Header() {
                       <div className="card p-5">
                         <div className="mb-4 flex items-center justify-between">
                           <span className="font-mono text-xs uppercase tracking-widest text-ink-400">
-                            Services · 4 pillars · {pillars.reduce((n, p) => n + p.services.length, 0)} sub-services
+                            Services · {pillars.length} pillars · {pillars.reduce((n, p) => n + p.services.length, 0)} sub-services
                           </span>
                           <Link href="/services" className="text-xs font-semibold text-flame-600 hover:underline">
                             View all services →
                           </Link>
                         </div>
-                        <div className="grid grid-cols-4 gap-3">
+                        <div
+                          className="grid gap-3"
+                          style={{
+                            gridTemplateColumns: `repeat(${Math.min(Math.max(pillars.length, 1), 4)}, minmax(0, 1fr))`,
+                          }}
+                        >
                           {pillars.map((p) => (
                             <div key={p.slug} className="rounded-xl bg-ink-50/60 p-3">
                               <Link href={`/services/${p.slug}`} className="group/hub flex items-start gap-2">

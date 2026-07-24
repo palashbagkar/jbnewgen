@@ -1000,6 +1000,18 @@ export const pillars: Pillar[] = [
   },
 ];
 
+/** Trimmed pillar shape handed to client components (header nav, footer,
+ *  homepage showcase) so the heavy narrative blocks aren't serialised. */
+export type NavPillar = {
+  slug: string;
+  short: string;
+  title: string;
+  blurb: string;
+  subtext: string;
+  icon: string;
+  services: { slug: string; title: string }[];
+};
+
 export const pillarBySlug = (slug: string) => pillars.find((p) => p.slug === slug);
 export const serviceInPillar = (pillar: Pillar, slug: string) =>
   pillar.services.find((s) => s.slug === slug);
@@ -1191,6 +1203,77 @@ export const markets: Market[] = [
 ];
 
 /* -------------------------------------------------------------------------- */
+/* Careers - open roles (from the live jbnewgen.com/careers page)              */
+/* -------------------------------------------------------------------------- */
+
+export type Role = {
+  title: string;
+  locations: string;
+  type: string;
+  icon: string;
+  body: string;
+};
+
+/** Fallback role list - the CMS "Job Openings" collection overrides this. */
+export const careerRoles: Role[] = [
+  {
+    title: "Partner Sales Manager",
+    locations: "Bangalore · Chennai · Hyderabad · Mumbai · DNCR · Kolkata",
+    type: "Remote",
+    icon: "handshake",
+    body: "Work with channel partners to drive sales of CCaaS, CPaaS, cloud and security solutions - building partner relationships, providing training support, and equipping partners with the sales tools they need.",
+  },
+  {
+    title: "Sales Support",
+    locations: "Bangalore",
+    type: "Remote",
+    icon: "folder",
+    body: "Provide administrative and operational support to the Sales and Partner teams - documentation, business process management, partner payouts, grievance resolution, and MIS report maintenance.",
+  },
+  {
+    title: "Trainer & Technical Support Specialist",
+    locations: "Bangalore",
+    type: "Remote",
+    icon: "bulb",
+    body: "Deliver continuous product training on CCaaS, CPaaS, and cloud services, and act as the technical support contact for partner sales teams - measured by deals closed independently.",
+  },
+  {
+    title: "Website Creation, SEO & Performance Marketing",
+    locations: "Bangalore / Mumbai",
+    type: "Remote",
+    icon: "trending",
+    body: "Own the creation, maintenance, SEO management, and performance marketing for our website - driving traffic and conversions while maintaining an optimal user experience.",
+  },
+  {
+    title: "Digital Marketing Specialist – Social Media Engagement",
+    locations: "Bangalore / Mumbai",
+    type: "Remote",
+    icon: "megaphone",
+    body: "Create compelling content for company and leadership social profiles across LinkedIn, Facebook, Instagram, and Twitter to increase engagement and position leaders in their field.",
+  },
+];
+
+/** Fallback Careers page copy - the CMS "Site Settings" global overrides this. */
+export const careersCopy = {
+  intro:
+    "Looking to join JB NewGen? Now it's easier than ever. With Quick Apply, you can explore our 5 current job openings and apply to all relevant positions in just a few clicks.",
+  rolesEyebrow: "Open Roles",
+  rolesTitle: "5 current openings",
+  rolesIntro:
+    "Every role below is remote-friendly across our India footprint. Apply to all relevant positions in just a few clicks.",
+  address:
+    "JB NewGen Enterprises Pvt. Ltd. · 504 Challenger Tower III, Thakur Village, Kandivali (E), Mumbai 400 101 · support@jbnewgen.com · +91 6362864230",
+};
+
+/** Fallback brand mark - the CMS "Site Settings" global overrides this. */
+export const brand = {
+  prefix: "JB",
+  suffix: "NewGen",
+  tagline: site.tagline,
+  logoAlt: "",
+};
+
+/* -------------------------------------------------------------------------- */
 /* Primary navigation                                                          */
 /* -------------------------------------------------------------------------- */
 
@@ -1216,7 +1299,15 @@ export const nav: NavItem[] = [
 
 export type PageEntry = { href: string; title: string; group: string };
 
-export function allPages(): PageEntry[] {
+/** Minimum shape the page registry needs from a pillar - satisfied by both the
+ *  static `pillars` above and the CMS-backed pillars from services-data.ts. */
+export type PillarLike = {
+  slug: string;
+  short: string;
+  services: { slug: string; title: string }[];
+};
+
+export function allPages(pillarList: PillarLike[] = pillars): PageEntry[] {
   const list: PageEntry[] = [
     { href: "/", title: "Home", group: "Main" },
     { href: "/about/company", title: "The Company", group: "About" },
@@ -1228,7 +1319,7 @@ export function allPages(): PageEntry[] {
     { href: "/insights", title: "Insights - Overview", group: "Insights" },
   ];
 
-  for (const p of pillars) {
+  for (const p of pillarList) {
     list.push({ href: `/services/${p.slug}`, title: p.short, group: "Services" });
     for (const s of p.services) {
       list.push({
@@ -1251,11 +1342,11 @@ export function allPages(): PageEntry[] {
   return list;
 }
 
-export function searchPages(query: string): PageEntry[] {
+export function searchPages(query: string, pillarList: PillarLike[] = pillars): PageEntry[] {
   const q = query.trim().toLowerCase();
   if (!q) return [];
   const terms = q.split(/\s+/);
-  return allPages()
+  return allPages(pillarList)
     .map((p) => {
       const hay = `${p.title} ${p.group} ${p.href}`.toLowerCase();
       const score = terms.reduce((acc, t) => acc + (hay.includes(t) ? 1 : 0), 0);

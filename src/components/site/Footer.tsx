@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { aboutChildren, categories, pillars, site } from "@/lib/content";
+import { aboutChildren, categories, site, type NavPillar } from "@/lib/content";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
-import { Logo } from "./Logo";
+import { Logo, type LogoBrand } from "./Logo";
 
 /** Footer doubles as a complete sitemap - every cluster reachable from any page. */
-export function Footer() {
+export function Footer({ pillars, brand }: { pillars: NavPillar[]; brand?: LogoBrand }) {
   const year = new Date().getFullYear();
 
   const columns: { title: string; links: { label: string; href: string }[] }[] = [
@@ -45,7 +45,7 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid gap-10 py-16 md:grid-cols-[1.3fr_2.6fr]">
           <Reveal variant="pop">
-            <Logo light withTagline />
+            <Logo light withTagline {...brand} />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-ink-300">
               Your India Go-To-Market partner. This footer is a full sitemap - every page is one
               click away.

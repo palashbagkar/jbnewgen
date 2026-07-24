@@ -4,6 +4,7 @@ import type { CollectionConfig } from 'payload'
  *  Local disk in dev; swapped to Vercel Blob for production (see todo). */
 export const Media: CollectionConfig = {
   slug: 'media',
+  admin: { group: 'Site' },
   access: { read: () => true },
   upload: true,
   fields: [

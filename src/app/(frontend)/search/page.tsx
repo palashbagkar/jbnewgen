@@ -4,6 +4,7 @@ import { NavGrid } from "@/components/nav/NavGrid";
 import { NextStep } from "@/components/nav/NextStep";
 import { Icon } from "@/components/ui/Icon";
 import { searchPages } from "@/lib/content";
+import { getNavPillars } from "@/lib/services-data";
 
 export const metadata: Metadata = { title: "Search" };
 
@@ -14,7 +15,8 @@ export default async function SearchPage({
 }) {
   const { q = "" } = await searchParams;
   const query = q.trim();
-  const results = query ? searchPages(query) : [];
+  const pillars = await getNavPillars();
+  const results = query ? searchPages(query, pillars) : [];
 
   return (
     <>

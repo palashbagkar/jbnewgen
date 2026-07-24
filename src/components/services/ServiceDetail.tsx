@@ -3,11 +3,12 @@ import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { NavGrid } from "@/components/nav/NavGrid";
 import { ServiceCTA } from "./ServiceCTA";
-import type { Pillar, Service } from "@/lib/content";
+import type { Service } from "@/lib/content";
+import type { PillarView } from "@/lib/services-data";
 
 /** Sub-service detail template: dark header (white breadcrumb + orange title),
  *  the writeup, its focus areas, sibling navigation, and the pillar CTA. */
-export function ServiceDetail({ pillar, service }: { pillar: Pillar; service: Service }) {
+export function ServiceDetail({ pillar, service }: { pillar: PillarView; service: Service }) {
   const siblings = pillar.services.filter((x) => x.slug !== service.slug);
   const trail = [
     { label: "Home", href: "/" },
@@ -121,7 +122,7 @@ export function ServiceDetail({ pillar, service }: { pillar: Pillar; service: Se
         ]}
       />
 
-      <ServiceCTA {...pillar.cta} />
+      {pillar.cta && <ServiceCTA {...pillar.cta} />}
     </>
   );
 }

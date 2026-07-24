@@ -8,7 +8,7 @@ export const Users: CollectionConfig = {
     maxLoginAttempts: 5,
     lockTime: 10 * 60 * 1000, // lock the account for 10 min after 5 failed logins
   },
-  admin: { useAsTitle: 'email' },
+  admin: { useAsTitle: 'email', group: 'Site' },
   fields: [
     { name: 'name', type: 'text' },
     {

@@ -48,6 +48,7 @@ export const Insights: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['title', 'category', 'date', '_status'],
+    group: 'Insights',
     description: 'Articles & archived insights.',
   },
   versions: { drafts: true },

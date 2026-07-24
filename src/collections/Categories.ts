@@ -11,7 +11,8 @@ const slugify = (s = '') =>
 /** Insight categories (Business & Strategy, Digital Marketing, ...). */
 export const Categories: CollectionConfig = {
   slug: 'categories',
-  admin: { useAsTitle: 'title' },
+  labels: { singular: 'Insight Category', plural: 'Insight Categories' },
+  admin: { useAsTitle: 'title', group: 'Insights' },
   access: { read: () => true },
   fields: [
     { name: 'title', type: 'text', required: true },

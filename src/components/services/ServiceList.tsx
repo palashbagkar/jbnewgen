@@ -2,11 +2,11 @@ import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { SplitHeading } from "@/components/ui/SplitHeading";
-import type { Pillar } from "@/lib/content";
+import type { PillarView } from "@/lib/services-data";
 
 /** The numbered sub-service list - the interactive core of a pillar page.
  *  Each row links to its own sub-service detail page. */
-export function ServiceList({ pillar }: { pillar: Pillar }) {
+export function ServiceList({ pillar }: { pillar: PillarView }) {
   const { label, title, intro } = pillar.servicesIntro;
   return (
     <section id="services" className="scroll-mt-24 bg-white py-20 sm:py-28">

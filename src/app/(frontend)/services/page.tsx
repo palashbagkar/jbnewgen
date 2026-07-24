@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/nav/PageHeader";
 import { NavGrid } from "@/components/nav/NavGrid";
 import { NextStep } from "@/components/nav/NextStep";
-import { pillars } from "@/lib/content";
+import { getPillars } from "@/lib/services-data";
 
 export const metadata: Metadata = { title: "Services" };
 
-export default function ServicesHub() {
+export default async function ServicesHub() {
+  const pillars = await getPillars();
   const subCount = pillars.reduce((n, p) => n + p.services.length, 0);
   return (
     <>
@@ -17,7 +18,7 @@ export default function ServicesHub() {
           { label: "Home", href: "/" },
           { label: "Services", href: "/services" },
         ]}
-        note={`Hub page. Four service pillars and ${subCount} sub-services - each with its own page.`}
+        note={`Hub page. ${pillars.length} service pillars and ${subCount} sub-services - each with its own page.`}
       />
       <NavGrid
         title="Service pillars"
